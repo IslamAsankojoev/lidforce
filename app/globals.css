@@ -120,3 +120,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+@theme{
+  --text-headingXL: clamp(45px, 3vw, 45px);
+  --text-headingS: clamp(20px, 2.5vw, 20px);
+  --text-bodyL: clamp(20px, 2.5vw, 20px);
+  --text-bodyS: clamp(16px, 2vw, 16px);
+  --text-bodyItalic: clamp(16px, 2vw, 16px);
+  --text-captionM: clamp(16px, 2vw, 16px);
+  --text-button: clamp(18px, 2vw, 18px);
+}
