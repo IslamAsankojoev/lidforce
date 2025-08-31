@@ -1,0 +1,102 @@
+# name: Rotmina FSD Rules
+# description: Cursor rules: FSD (no pages/processes), TypeScript strict, shadcn-first, RHF register, Tailwind.
+# version: 2
+
+when:
+  - "**/*.ts"
+  - "**/*.tsx"
+  - "**/*.css"
+  - "**/*.scss"
+  - "**/*.md"
+  - "package.json"
+  - "tailwind.config.*"
+  - "src/**"
+
+messages: |
+  # ОБЩИЕ ПРИНЦИПЫ
+  - Архитектура строго FSD со слоями: **app/**, **widgets/**, **features/**, **entities/**, **shared/**. Слоёв **pages/** и **processes/** НЕТ и не создавать.
+  - Сохраняй направленность зависимостей: верхние слои могут тянуть нижние; обратное — запрещено.
+  - Перед созданием любого UI проверяй уместность **shadcn/ui**. Если покрывает задачу без перегруза — используй. Если нет — делай headless‑реализацию (минимальный API) в shared/ui или соответствующем слое.
+  - TypeScript (strict). Избегай `any/unknown` без крайней необходимости. Типы на границах модулей и API.
+  - Верстка — Tailwind. Не использовать инлайн‑стили без причины. Цвета и размеры — из токенов/tailwind config.
+  - Анимации — framer-motion, лаконично.
+  - Формы — react-hook-form, **предпочитать `register`** над `Controller`, где это возможно.
+  - HTTP — ky; запросы/кеш — React Query (TanStack). Валидация данных — zod.
+  - Именование: файлов — kebab-case; компонентов — PascalCase; хуков — `useXxx.ts`.
+
+  # СЛОИ FSD
+  - app/ — инициализация приложения, провайдеры, глобальные стили, роутинг, layout.
+  - widgets/ — композиции из нескольких features/entities (без бизнес‑логики домена).
+  - features/ — пользовательские сценарии/действия над сущностями (формы, мутации, интеракции).
+  - entities/ — бизнес‑сущности: модели/типы, упрощённые UI карточки/виды.
+  - shared/ — общие примитивы/ui, libs, api‑клиенты, config, styles, i18n.
+
+  # SHADCN/UI ЧЕК-ЛИСТ
+  1) Есть готовый компонент shadcn/ui (Button, Input, Select, Dialog, Sheet, Dropdown, Tabs, Table, Form, Toast и т.д.)?
+  2) Подходит поведение/доступность (a11y, клавиатура, фокус)?
+  3) Не тянем ли лишнего и не усложняем ли интерфейс?
+  - Если все пункты Да — **используй shadcn/ui**. Если нет — сделай headless‑компонент.
+
+  # ИМПОРТЫ И PUBLIC API
+  - Абсолютные алиасы: "@/app", "@/shared", "@/entities", "@/features", "@/widgets".
+  - Импорты только через публичные API‑баррели (index.ts) каждого слайса. Не лезть во внутренние пути чужих слоёв.
+  - Не создавай баррель, который раскрывает приватное.
+
+  # ФОРМЫ (RHF)
+  - Используй `register` по умолчанию: `<input {...register('field')} />`.
+  - Для сложных контролов создай адаптер (например, AsyncSelectRHF) и старайся сохранить ergonomics в стиле register. Если невозможно — аккуратно применяй `Controller`.
+  - Валидация: `zodResolver(schema)`; схемы хранить рядом с моделью feature/entity.
+
+  # API/ДАННЫЕ
+  - Ky instance в shared/api. Каждый endpoint — типизирован + Zod схема парсинга ответа.
+  - React Query ключи — централизованно в shared/api/queryKeys.ts. Настрой стратегии кеша/инвалидации осознанно.
+  - Ошибки показывай дружелюбно (toast из shared/ui/toast); продумывай skeleton/loading/empty.
+
+  # UI/UX
+  - Tailwind + shadcn/ui; единый rhythm (spacing), шрифты по токенам.
+  - Адаптив обязателен; избегать CLS; использовать skeletons.
+  - Не использовать "магические" значения; только токены.
+
+  # КОМИТЫ/PR
+  - Conventional Commits: feat:, fix:, refactor:, chore:, docs:, perf:, ci:.
+  - В PR кратко:
+    - выбранный слой и почему,
+    - обоснование shadcn vs headless,
+    - public API слайса.
+
+  # ЧЕГО НЕЛЬЗЯ
+  - Создавать слои pages/ или processes/.
+  - Нарушать зависимость слоёв (widgets -> features -> entities -> shared). 
+  - Тянуть внутренности чужих слайсов напрямую.
+  - Подключать тяжёлые либы без нужды.
+  - Писать тесты (в этом проекте **тесты не пишем**).
+
+  # ГЕНЕРАЦИЯ (Cursor)
+  - Всегда указывай целевой слой (widget/feature/entity/shared/app) и путь файла.
+  - Для UI предлагай два варианта: A) shadcn/ui, B) headless. Выбирай и объясняй кратко, почему.
+  - Рядом с public API слайса добавляй mini‑README в index.ts (или README.md) с описанием экспортов.
+
+  # ШАБЛОНЫ
+  - Feature (пример): features/user-profile/
+      - ui/ProfileForm.tsx
+      - model/types.ts
+      - model/validation.ts
+      - api/index.ts
+      - index.ts (public API)
+  - Entity (пример): entities/user/
+      - ui/UserCard.tsx
+      - model/types.ts
+      - lib/formatName.ts
+      - index.ts
+  - Shared primitives:
+      - shared/ui/FormField.tsx (адаптер под RHF + shadcn Form)
+      - shared/api/ky.ts, queryKeys.ts
+
+  # ЧЕК-ЛИСТ ПЕРЕД КОДОМ
+  - [ ] Слой FSD выбран корректно
+  - [ ] shadcn/ui уместен? какой компонент?
+  - [ ] Zod‑схемы/типы на границах
+  - [ ] RHF через `register` где возможно
+  - [ ] Tailwind классы, без инлайн‑стилей
+  - [ ] Query keys/кеш‑стратегия определены
+  - [ ] Публичный API чистый

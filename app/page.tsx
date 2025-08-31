@@ -1,4 +1,5 @@
 import { Typography } from '@/src/shared'
+import { Feedback } from '@/src/widgets'
 
 export default function Home() {
   return (
@@ -28,6 +29,8 @@ export default function Home() {
           </div>
         </div>
       </main>
+      
+      <Feedback />
     </div>
   )
 }
