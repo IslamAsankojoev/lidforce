@@ -41,6 +41,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+  
+  /* Кастомные цвета */
+  --color-accent-primary: #35B6D3;
+  --color-red-alert: #F94B4B;
+  --color-bg-surface: #0A0B11;
+  --color-green-success: #50D313;
+  --color-white-pure: #FDFEFF;
+  --color-grey-soft: #CACACA;
+  --color-grey-neutral: #D0D4DF;
+  --color-text-muted: #9094A4;
+  --color-dark-deep: #2A2A2A;
 }
 
 :root {
@@ -129,4 +140,15 @@
   --text-bodyItalic: clamp(16px, 2vw, 16px);
   --text-captionM: clamp(16px, 2vw, 16px);
   --text-button: clamp(18px, 2vw, 18px);
+  
+  /* Кастомные цвета */
+  --accent-primary: #35B6D3;
+  --red-alert: #F94B4B;
+  --bg-surface: #0A0B11;
+  --green-success: #50D313;
+  --white-pure: #FDFEFF;
+  --grey-soft: #CACACA;
+  --grey-neutral: #D0D4DF;
+  --text-muted: #9094A4;
+  --dark-deep: #2A2A2A;
 }

@@ -17,13 +17,12 @@ const navigationItems = [
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname()
-  console.log(pathname)
   const isActive = (href: string) => pathname === href
 
   return (
-    <header className="bg-[#0a0b11] w-full sticky top-0 z-50">
-      <div className="max-w-[1180px] mx-auto px-4 sm:px-6 lg:px-10">
-        <div className="bg-[rgba(202,202,202,0.15)] rounded-[600px] h-16 md:h-20 flex items-center justify-between px-6 sm:px-8 lg:px-10">
+    <header className="w-full sticky top-0 z-50">
+      <div className="container mx-auto">
+        <div className="bg-grey-soft/15 backdrop-blur-md md:rounded-full h-16 md:h-20 flex items-center justify-between px-6 sm:px-8 lg:px-10">
           {/* Логотип */}
           <div className="flex-shrink-0">
             <div className="w-12 h-12 relative overflow-hidden">
@@ -43,8 +42,8 @@ export const Header = () => {
                 href={item.href}
                 className={`font-medium text-lg px-3 py-3 transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-[#35b6d3] border-b border-[#35b6d3]'
-                    : 'text-[#fdfeff] hover:text-[#35b6d3]'
+                    ? 'text-accent-primary border-b border-accent-primary'
+                    : 'text-white-pure hover:text-accent-primary'
                 }`}
               >
                 {item.name}
@@ -60,8 +59,8 @@ export const Header = () => {
                 href={item.href}
                 className={`font-medium text-base px-2 py-2 transition-colors duration-200 ${
                   isActive(item.href)
-                    ? 'text-[#35b6d3] border-b border-[#35b6d3]'
-                    : 'text-[#fdfeff] hover:text-[#35b6d3]'
+                    ? 'text-accent-primary border-b border-accent-primary'
+                    : 'text-white-pure hover:text-accent-primary'
                 }`}
               >
                 {item.name}
@@ -73,13 +72,13 @@ export const Header = () => {
           <div className="lg:hidden flex items-center">
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
-                <button className="text-[#fdfeff] hover:text-[#35b6d3] transition-colors duration-200 cursor-pointer">
+                <button className="text-white-pure hover:text-accent-primary transition-colors duration-200 cursor-pointer">
                   <Menu className="w-6 h-6" />
                 </button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="bg-[#0a0b11] border-l border-[rgba(202,202,202,0.15)] w-[280px] px-4"
+                className="bg-bg-surface border-l border-[rgba(202,202,202,0.15)] w-[280px] px-4"
               >
                 <div className="flex flex-col h-full">
                   {/* Заголовок мобильного меню */}
@@ -89,7 +88,7 @@ export const Header = () => {
                     </div>
                     <button
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-[#fdfeff] hover:text-[#35b6d3] transition-colors duration-200"
+                      className="text-white-pure hover:text-accent-primary transition-colors duration-200"
                     >
                       <X className="w-6 h-6" />
                     </button>
@@ -104,8 +103,8 @@ export const Header = () => {
                         onClick={() => setIsMobileMenuOpen(false)}
                         className={`font-medium text-lg px-4 py-3 rounded-lg transition-colors duration-200 ${
                           isActive(item.href)
-                            ? 'text-[#35b6d3] bg-[rgba(53,182,211,0.1)]'
-                            : 'text-[#fdfeff] hover:text-[#35b6d3] hover:bg-[rgba(202,202,202,0.1)]'
+                            ? 'text-accent-primary bg-[rgba(53,182,211,0.1)]'
+                            : 'text-white-pure hover:text-accent-primary hover:bg-[rgba(202,202,202,0.1)]'
                         }`}
                       >
                         {item.name}
@@ -114,8 +113,8 @@ export const Header = () => {
                   </nav>
 
                   {/* Дополнительная информация для мобильного меню */}
-                  <div className="mt-auto pt-8 border-t border-[rgba(202,202,202,0.15)]">
-                    <div className="text-[#fdfeff] text-sm opacity-70 px-4">
+                  <div className="mt-auto py-8 border-t border-[rgba(202,202,202,0.15)]">
+                    <div className="text-white-pure text-sm opacity-70 px-4">
                       <p>Lid Force</p>
                       <p className="mt-1">Ваш надежный партнер</p>
                     </div>
