@@ -3,16 +3,8 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/src/shadcn/components/ui/sheet'
-import { Logo } from '@/src/shared'
+import { Logo, routes } from '@/src/shared'
 import { usePathname } from 'next/navigation'
-
-const navigationItems = [
-  { name: 'Главная', href: '/' },
-  { name: 'Услуги', href: '/service/' },
-  { name: 'Кейсы', href: '/case/' },
-  { name: 'О нас', href: '/about/' },
-  { name: 'Контакты', href: '/contact/' },
-]
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -36,7 +28,7 @@ export const Header = () => {
 
           {/* Десктопная навигация */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navigationItems.map((item) => (
+            {routes.map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -53,7 +45,7 @@ export const Header = () => {
 
           {/* Планшетная навигация */}
           <nav className="hidden md:flex lg:hidden items-center gap-6">
-            {navigationItems.slice(0, 3).map((item) => (
+            {routes.slice(0, 3).map((item) => (
               <a
                 key={item.name}
                 href={item.href}
@@ -96,7 +88,7 @@ export const Header = () => {
 
                   {/* Мобильная навигация */}
                   <nav className="flex flex-col space-y-4">
-                    {navigationItems.map((item) => (
+                    {routes.map((item) => (
                       <a
                         key={item.name}
                         href={item.href}
