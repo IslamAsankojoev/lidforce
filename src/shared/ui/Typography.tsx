@@ -30,12 +30,11 @@ const variantStyles: Record<string, string> = {
 export const Typography: FC<TypographyProps> = ({
   children,
   variant = 'bodyL',
-  className = '',
+  className,
   ...props
 }) => {
   const styles = variantStyles
-  const classNames = cn(styles[variant], className)
-
+  const classNames = clsx(styles[variant], className)
   return (
     <p className={classNames} {...props}>
       {children}

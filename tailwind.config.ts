@@ -2,28 +2,19 @@ import type { Config } from 'tailwindcss'
 import { colors } from '@/src/shared'
 
 const config: Config = {
-  content: [
-    './src/**/*.{js,ts,jsx,tsx,mdx}',
-    './app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}', './app/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    screens: {
-      sm: '480px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
-    },
     extend: {
       colors: colors,
       container: {
         center: true,
+        padding: '1rem',
         screens: {
-          sm: '100%',
-          md: '991px',
-          lg: '1180px',
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
           xl: '1180px',
         },
-        padding: '1rem',
       },
     },
   },

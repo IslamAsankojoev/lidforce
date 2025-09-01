@@ -5,7 +5,7 @@ import { colors, Instagram, Logo, routes, Telegram, Typography, WhatsApp } from 
 import { Mail } from 'lucide-react'
 
 export const Footer = () => {
-  const windowWidth = window === undefined ? 1024 : window.innerWidth
+  const windowWidth = typeof window === 'undefined' ? 1024 : window.innerWidth
   return (
     <>
       <footer className={clsx('relative rounded-4xl')}>

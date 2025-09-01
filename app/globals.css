@@ -1,5 +1,5 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));
 
@@ -41,17 +41,17 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-  
+
   /* Кастомные цвета */
-  --color-accent-primary: #35B6D3;
-  --color-red-alert: #F94B4B;
-  --color-bg-surface: #0A0B11;
-  --color-green-success: #50D313;
-  --color-white-pure: #FDFEFF;
-  --color-grey-soft: #CACACA;
-  --color-grey-neutral: #D0D4DF;
-  --color-text-muted: #9094A4;
-  --color-dark-deep: #2A2A2A;
+  --color-accent-primary: #35b6d3;
+  --color-red-alert: #f94b4b;
+  --color-bg-surface: #0a0b11;
+  --color-green-success: #50d313;
+  --color-white-pure: #fdfeff;
+  --color-grey-soft: #cacaca;
+  --color-grey-neutral: #d0d4df;
+  --color-text-muted: #9094a4;
+  --color-dark-deep: #2a2a2a;
 }
 
 :root {
@@ -132,7 +132,7 @@
   }
 }
 
-@theme{
+@theme {
   --text-headingXL: clamp(45px, 3vw, 45px);
   --text-headingS: clamp(20px, 2.5vw, 20px);
   --text-bodyL: clamp(20px, 2.5vw, 20px);
@@ -140,15 +140,33 @@
   --text-bodyItalic: clamp(16px, 2vw, 16px);
   --text-captionM: clamp(16px, 2vw, 16px);
   --text-button: clamp(18px, 2vw, 18px);
-  
+
   /* Кастомные цвета */
-  --accent-primary: #35B6D3;
-  --red-alert: #F94B4B;
-  --bg-surface: #0A0B11;
-  --green-success: #50D313;
-  --white-pure: #FDFEFF;
-  --grey-soft: #CACACA;
-  --grey-neutral: #D0D4DF;
-  --text-muted: #9094A4;
-  --dark-deep: #2A2A2A;
+  --accent-primary: #35b6d3;
+  --red-alert: #f94b4b;
+  --bg-surface: #0a0b11;
+  --green-success: #50d313;
+  --white-pure: #fdfeff;
+  --grey-soft: #cacaca;
+  --grey-neutral: #d0d4df;
+  --text-muted: #9094a4;
+  --dark-deep: #2a2a2a;
+
+  --breakpoint-*: initial;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1180px;
+  --container-*: initial;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1180px;
+
+  --container-padding: 1rem;
+}
+
+@utility container {
+  padding-inline: var(--container-padding);
+  margin-inline: auto;
 }

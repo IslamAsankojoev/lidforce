@@ -1,6 +1,5 @@
 'use client'
 
-import { DurkCyr } from '../shared/constants/fonts'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
 import { Typography } from '../shared'
@@ -39,18 +38,14 @@ export const Feedback = () => {
   })
 
   return (
-    <section className="bg-[#0a0b11] py-20 px-4 md:px-8 lg:px-16 xl:px-20 2xl:px-32">
-      <div className="max-w-7xl mx-auto">
+    <section className="bg-[#0a0b11] py-20">
+      <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           {/* Текстовый блок */}
           <div className="flex flex-col gap-6">
-            <div
-              className={`${DurkCyr.className} text-[#fdfeff] text-3xl md:text-4xl lg:text-5xl leading-tight`}
-            >
-              <Typography variant="headingXL">
-                Напоминаем что у нас ты <br /> можешь заказать:
-              </Typography>
-            </div>
+            <Typography variant="headingXL" className="text-white-pure">
+              Напоминаем что у нас ты <br /> можешь заказать:
+            </Typography>
 
             <p className="font-medium text-white-pure text-lg leading-relaxed">
               Оставьте заявку — мы свяжемся с вами, обсудим цели и предложим эффективное решение для
