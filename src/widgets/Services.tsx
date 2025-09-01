@@ -1,23 +1,13 @@
 'use client'
 
 import { Typography } from '../shared'
-import Tilda from '../../public/services/Tilda&Wordpress.png'
-import SEO from '../../public/services/seo.png'
-import Birfing from '../../public/services/brifing.png'
-import Yandex from '../../public/services/yandex.png'
-import Ads from '../../public/services/ads.png'
-import SocialMedia from '../../public/services/social-media.png'
-import Avito from '../../public/services/wb&avito.png'
-import Record from '../../public/services/record.png'
-import Bots from '../../public/services/vk&telegram.png'
-import ReelsBot from '../../public/services/reels.png'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 
 interface ServiceItem {
   id: number
   title: string
   description: string
-  image?: StaticImageData | string
+  image: string
 }
 
 const servicesData: ServiceItem[] = [
@@ -25,61 +15,61 @@ const servicesData: ServiceItem[] = [
     id: 1,
     title: 'Делаем продающие сайты на Tilda и Wordpress',
     description: 'Создаем современные, быстрые и конверсионные сайты на популярных платформах',
-    image: Tilda,
+    image: '/services/Tilda&Wordpress.png',
   },
   {
     id: 2,
     title: 'Настраиваем СEO, чтобы вы были первые в поиске',
     description: 'Оптимизируем сайты для поисковых систем и выводим в топ выдачи',
-    image: SEO,
+    image: '/services/seo.png',
   },
   {
     id: 3,
     title: 'Создаем брендинг, нейминг, логотипы, упаковку и инфографику',
     description: 'Разрабатываем уникальный визуальный стиль и фирменную айдентику',
-    image: Birfing,
+    image: '/services/brifing.png',
   },
   {
     id: 4,
     title: 'Увеличиваем продажи на сайте с помощью трафика из Яндекса',
     description: 'Настраиваем эффективную контекстную рекламу для привлечения клиентов',
-    image: Yandex,
+    image: '/services/yandex.png',
   },
   {
     id: 5,
     title: 'Делаем рекламные кампании с блогерами и СМИ',
     description: 'Организуем сотрудничество с инфлюенсерами и медиа для продвижения',
-    image: Ads,
+    image: '/services/ads.png',
   },
   {
     id: 6,
     title: 'Упаковываем и ведём соц.сети',
     description: 'Создаем контент и ведем аккаунты в социальных сетях',
-    image: SocialMedia,
+    image: '/services/social-media.png',
   },
   {
     id: 7,
     title: 'Ведём маркетплейсы и Авито',
     description: 'Управляем продажами на популярных торговых площадках',
-    image: Avito,
+    image: '/services/wb&avito.png',
   },
   {
     id: 8,
     title: 'Организовываем фото и видео съемки',
     description: 'Проводим профессиональные фото и видеосъемки для контента',
-    image: Record,
+    image: '/services/record.png',
   },
   {
     id: 9,
     title: 'Разрабатываем ботов в Telegram и ВКонтакте',
     description: 'Создаем автоматизированных помощников для мессенджеров',
-    image: Bots,
+    image: '/services/vk&telegram.png',
   },
   {
     id: 10,
     title: 'ReelsBot — личный завод по Reels, которые продают',
     description: 'Автоматизируем создание продающего контента для Reels',
-    image: ReelsBot,
+    image: '/services/reels.png',
   },
 ]
 
@@ -139,12 +129,12 @@ export const Services = () => {
 
                 {/* Иконка или декоративный элемент */}
                 <div className="relative flex justify-center items-center w-full h-full">
-                  <Image
-                    src={service.image as StaticImageData}
-                    alt={service.title}
-                    objectFit='contain'
-                    fill
-                  />
+                                              <Image
+                              src={service.image}
+                              alt={service.title}
+                              objectFit='contain'
+                              fill
+                            />
                 </div>
               </div>
             ))}

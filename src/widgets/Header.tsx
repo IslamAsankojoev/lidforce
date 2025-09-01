@@ -8,9 +8,8 @@ import { usePathname } from 'next/navigation'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const pathname = usePathname()
-  const isActive = (href: string) => pathname === href
-
+  const pathname = usePathname().split('/')[1]
+  const isActive = (href: string) => pathname === href.split('/')[1]
   return (
     <header className="w-full sticky top-0 z-50">
       <div className="container mx-auto px-0 md:px-4">

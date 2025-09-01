@@ -72,7 +72,7 @@ export const FAQs = () => {
             {faqData.map((faq) => {
               const isOpen = openItems.includes(faq.id)
               return (
-                <div key={faq.id} className="w-full">
+                <div key={faq.id} className="w-full p-4 px-6 bg-white-pure rounded-4xl">
                   <motion.div
                     initial={{
                       opacity: 0,
@@ -81,19 +81,22 @@ export const FAQs = () => {
                       opacity: 1,
                     }}
                     exit={{ opacity: 0 }}
-                    className="bg-white-pure transition-all cursor-pointer overflow-hidden rounded-4xl"
+                    className=" transition-all cursor-pointer overflow-hidden "
                   >
                     <div
-                      className="flex items-center justify-between p-4 cursor-pointer"
+                      className="flex items-center justify-between cursor-pointer"
                       onClick={() => toggleItem(faq.id)}
                     >
-                      <h3 className="font-medium text-[#2e2e30] text-xl leading-relaxed pr-4">
+                      <Typography
+                        variant="bodyL"
+                        className="font-medium text-[#2e2e30] text-xl leading-relaxed pr-4"
+                      >
                         {faq.question}
-                      </h3>
+                      </Typography>
                       <div className="flex-shrink-0">
                         <Plus
                           className={clsx(
-                            'w-8 h-8 transition-transform',
+                            'w-8 h-8 transition-all hover:opacity-80',
                             isOpen ? 'rotate-45' : 'rotate-0',
                           )}
                         />
@@ -101,12 +104,7 @@ export const FAQs = () => {
                     </div>
 
                     {/* Ответ */}
-                    <div
-                      className={clsx(
-                        'px-6 transition-all overflow-hidden',
-                        isOpen ? 'max-h-96 pb-6 opacity-100' : 'max-h-0 opacity-0',
-                      )}
-                    >
+                    <motion.div className={clsx('transition-all overflow-hidden')}>
                       <AnimatePresence>
                         {isOpen && (
                           <motion.div
@@ -126,11 +124,13 @@ export const FAQs = () => {
                               marginTop: 0,
                             }}
                           >
-                            <Typography className="text-balance">{faq.answer}</Typography>
+                            <Typography variant="bodyL" className="text-balance">
+                              {faq.answer}
+                            </Typography>
                           </motion.div>
                         )}
                       </AnimatePresence>
-                    </div>
+                    </motion.div>
                   </motion.div>
                 </div>
               )

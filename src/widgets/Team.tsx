@@ -1,16 +1,13 @@
 'use client'
 
 import { Typography } from '../shared'
-import Image, { StaticImageData } from 'next/image'
-import eldiyar from '../../public/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png'
-import defaultAvatar from '../../public/teamates/21c5c170c9b40b07a73ea887a150eb15e8a1fd73.svg'
-import Lightning from '../../public/Lightning.png'
+import Image from 'next/image'
 
 interface TeamMember {
   id: number
   name: string
   position: string
-  image?: StaticImageData | string
+  image: string
   hasImage?: boolean
 }
 
@@ -19,56 +16,56 @@ const teamData: TeamMember[] = [
     id: 1,
     name: 'Элдияр',
     position: 'Генеральный директор',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 2,
     name: 'Марсель',
     position: 'Продюсер',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 3,
     name: 'Ынтымак',
     position: 'Мобилограф',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 4,
     name: 'Баястан',
     position: 'Таргетолог',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 5,
     name: 'Торогелди',
     position: 'Таргетолог',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 6,
     name: 'Бермет',
     position: 'Проект-менеджер',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 7,
     name: 'Аруужан',
     position: 'Контент маркетолог',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
   {
     id: 8,
     name: 'Алтынай',
     position: 'Проект-менеджер',
-    image: eldiyar,
+    image: '/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png',
     hasImage: true,
   },
 ]
@@ -103,7 +100,7 @@ export const Team = () => {
                   {member.hasImage ? (
                     <div className="absolute inset-0">
                       <Image
-                        src={member.image as StaticImageData}
+                        src={member.image}
                         alt={member.name}
                         fill
                         className="object-cover rounded-[30px]"
@@ -113,7 +110,7 @@ export const Team = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-[150px] h-[146px] relative">
                         <Image
-                          src={defaultAvatar}
+                          src="/teamates/21c5c170c9b40b07a73ea887a150eb15e8a1fd73.svg"
                           alt="Default avatar"
                           fill
                           className="object-contain"
@@ -151,7 +148,7 @@ export const Team = () => {
                   {member.hasImage ? (
                     <div className="absolute inset-0">
                       <Image
-                        src={member.image as StaticImageData}
+                        src={member.image}
                         alt={member.name}
                         fill
                         className="object-cover rounded-[30px]"
@@ -161,7 +158,7 @@ export const Team = () => {
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-[150px] h-[146px] relative">
                         <Image
-                          src={defaultAvatar}
+                          src="/teamates/21c5c170c9b40b07a73ea887a150eb15e8a1fd73.svg"
                           alt="Default avatar"
                           fill
                           className="object-contain"
@@ -203,7 +200,7 @@ export const Team = () => {
                 {member.hasImage ? (
                   <div className="absolute inset-0">
                     <Image
-                      src={member.image as StaticImageData}
+                      src={member.image}
                       alt={member.name}
                       fill
                       className="object-cover rounded-[30px]"
@@ -213,7 +210,7 @@ export const Team = () => {
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="w-[150px] h-[146px] relative">
                       <Image
-                        src={defaultAvatar}
+                        src="/teamates/21c5c170c9b40b07a73ea887a150eb15e8a1fd73.svg"
                         alt="Default avatar"
                         fill
                         className="object-contain"
@@ -247,12 +244,12 @@ export const Team = () => {
               Одна команда для решения
             </Typography>
             <div className="flex items-center gap-2 justify-center">
-              <Image src={Lightning} alt="arrow right" width={60} height={60} />
+              <Image src="/lightning.png" alt="arrow right" width={60} height={60} />
               <Typography variant="headingXL" className="text-bg-surface">
                 всех задач
               </Typography>
               <Image
-                src={Lightning}
+                src="/lightning.png"
                 alt="arrow right"
                 width={60}
                 height={60}
