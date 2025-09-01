@@ -85,7 +85,7 @@ const servicesData: ServiceItem[] = [
 
 export const Services = () => {
   return (
-    <section className="bg-bg-surface py-18">
+    <section className="bg-bg-surface py-18 border-b border-dark-deep">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           {/* Заголовок */}
