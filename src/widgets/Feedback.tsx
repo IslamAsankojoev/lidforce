@@ -38,7 +38,7 @@ export const Feedback = () => {
   })
 
   return (
-    <section className="bg-[#0a0b11] py-20">
+    <section className="py-20">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           {/* Текстовый блок */}

@@ -13,7 +13,7 @@ export const Header = () => {
 
   return (
     <header className="w-full sticky top-0 z-50">
-      <div className="container mx-auto px-0">
+      <div className="container mx-auto px-0 md:px-4">
         <div className="bg-grey-soft/15 backdrop-blur-md md:rounded-full h-16 md:h-20 flex items-center justify-between px-6 sm:px-8 lg:px-10">
           {/* Логотип */}
           <div className="flex-shrink-0">

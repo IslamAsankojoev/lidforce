@@ -4,7 +4,6 @@ import { FC, HTMLProps } from 'react'
 
 import clsx from 'clsx'
 import { Montserrat } from 'next/font/google'
-import { cn } from '@/src/shadcn/lib/utils'
 import { DurkCyr } from '../constants'
 
 interface TypographyProps extends HTMLProps<HTMLParagraphElement> {

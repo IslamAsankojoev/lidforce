@@ -1,0 +1,13 @@
+<svg preserveAspectRatio="none" width="100%" height="100%" overflow="visible" style="display: block;" viewBox="0 0 59 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="youtube" style="mix-blend-mode:plus-lighter" opacity="0.5" filter="url(#filter0_f_2089_45410)">
+<path id="bg" d="M13.9886 18.337C14.1328 16.1165 15.918 14.3764 18.1404 14.2663C21.3585 14.1069 25.9582 13.9146 29.4239 13.9146C32.8896 13.9146 37.4892 14.1069 40.7074 14.2663C42.9297 14.3764 44.7149 16.1165 44.8591 18.337C44.9973 20.4643 45.1335 23.0819 45.1335 25.1358C45.1335 27.1896 44.9973 29.8072 44.8591 31.9345C44.7149 34.155 42.9297 35.8951 40.7074 36.0052C37.4892 36.1646 32.8896 36.3569 29.4239 36.3569C25.9582 36.3569 21.3585 36.1646 18.1404 36.0052C15.918 35.8951 14.1328 34.155 13.9886 31.9345C13.8504 29.8072 13.7142 27.1896 13.7142 25.1358C13.7142 23.0819 13.8504 20.4643 13.9886 18.337Z" fill="var(--fill-0, #FC0D1B)"/>
+<path id="play" d="M26.0561 20.6477V29.6246L35.033 25.1362L26.0561 20.6477Z" fill="var(--fill-0, white)"/>
+</g>
+<defs>
+<filter id="filter0_f_2089_45410" x="-3.46541" y="-11.4654" width="62.8386" height="62.8386" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="6.73271" result="effect1_foregroundBlur_2089_45410"/>
+</filter>
+</defs>
+</svg>
