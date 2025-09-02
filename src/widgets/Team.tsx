@@ -74,7 +74,7 @@ export const Team = () => {
   return (
     <section className="bg-white-pure py-20">
       <div className="container mx-auto">
-        <div className="flex flex-col gap-10">
+        <div className="flex flex-col">
           {/* Заголовок */}
           <div className="flex flex-col gap-6">
             <Typography variant="headingXL" className="text-bg-surface">
@@ -87,15 +87,15 @@ export const Team = () => {
               стратегии, современные решения и измеримый результат.
             </Typography>
           </div>
-
+          <br />
           {/* Карточки команды */}
           <div className="relative">
             {/* Первый ряд карточек */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mb-5">
+            <div className="flex justify-center mb-5">
               {teamData.slice(0, 1).map((member) => (
                 <div
                   key={member.id}
-                  className="bg-grey-neutral rounded-[30px] h-[432px] relative overflow-hidden border-6 border-white-pure"
+                  className="bg-grey-neutral rounded-[30px] w-[323px] h-[432px] relative overflow-hidden border-white-pure"
                 >
                   {member.hasImage ? (
                     <div className="absolute inset-0">
@@ -139,11 +139,15 @@ export const Team = () => {
             </div>
 
             {/* Второй ряд карточек */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-center">
+            <div className="flex justify-center mb-5">
               {teamData.slice(1, 4).map((member) => (
                 <div
                   key={member.id}
-                  className="bg-grey-neutral rounded-[30px] h-[432px] relative overflow-hidden border-6 border-white-pure"
+                  className="bg-grey-neutral rounded-[30px] w-[323px] h-[432px] relative overflow-hidden border-white-pure border-2"
+                  style={{
+                    marginRight: '-20px',
+                    zIndex: 4 - member.id,
+                  }}
                 >
                   {member.hasImage ? (
                     <div className="absolute inset-0">
@@ -188,14 +192,15 @@ export const Team = () => {
           </div>
 
           {/* Третий ряд карточек */}
-          <div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 justify-center
-          "
-          >
+          <div className="flex justify-center mb-5">
             {teamData.slice(4, 8).map((member) => (
               <div
                 key={member.id}
-                className="bg-grey-neutral rounded-[30px] h-[432px] relative overflow-hidden border-6 border-white-pure"
+                className="bg-grey-neutral rounded-[30px] w-[323px] h-[432px] relative overflow-hidden border-white-pure border-2"
+                style={{
+                  marginLeft: '-20px',
+                  zIndex: 8 - member.id,
+                }}
               >
                 {member.hasImage ? (
                   <div className="absolute inset-0">

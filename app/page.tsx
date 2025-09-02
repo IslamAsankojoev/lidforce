@@ -1,4 +1,4 @@
-import { Feedback, FAQs, Services, Team, Partners, Adventages, Reviews, Hero } from '@/src/widgets'
+import { Feedback, FAQs, Services, Team, Partners, Adventages, Reviews, Hero, Cases } from '@/src/widgets'
 
 export default function Home() {
   return (
@@ -6,6 +6,7 @@ export default function Home() {
       <Hero />
       <Adventages />
       <Services />
+      <Cases />
       <Partners />
       <Team />
       <Reviews />
