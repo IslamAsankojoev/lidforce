@@ -94,8 +94,9 @@ export const Services = () => {
             {servicesData.map((service) => (
               <div
                 key={service.id}
-                className="bg-dark-deep rounded-[30px] p-5 h-[242px] flex flex-col justify-between hover:bg-dark-deep/80 transition-colors duration-200"
+                className="bg-dark-deep rounded-[30px] p-5 h-[242px] flex flex-col justify-between transition-colors duration-200 hover:border-accent-primary border border-transparent shadow-accent-primary hover:shadow-[0px_0px_10px_0px_rgba(53,182,211,0.5)]"
               >
+
                 <div className="flex-1">
                   <Typography variant="bodyS" className="text-white-pure leading-relaxed">
                     {service.title.split(' ').map((word, index) => {
@@ -129,12 +130,7 @@ export const Services = () => {
 
                 {/* Иконка или декоративный элемент */}
                 <div className="relative flex justify-center items-center w-full h-full">
-                                              <Image
-                              src={service.image}
-                              alt={service.title}
-                              objectFit='contain'
-                              fill
-                            />
+                  <Image src={service.image} alt={service.title} objectFit="contain" fill />
                 </div>
               </div>
             ))}

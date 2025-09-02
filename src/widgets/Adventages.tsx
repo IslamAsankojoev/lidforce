@@ -1,5 +1,6 @@
 'use client'
 
+import { motion } from 'framer-motion'
 import { Typography } from '../shared'
 
 interface Advantage {
@@ -61,9 +62,25 @@ export const Adventages = () => {
     <section className="bg-bg-surface py-20 relative border-b border-dark-deep">
       <div className="container mx-auto">
         <div className="relative h-[240px]">
-          {advantagesData.map((advantage) => (
-            <div
+          {advantagesData.map((advantage, index) => (
+            <motion.div
               key={advantage.id}
+              initial={{ 
+                opacity: 0, 
+                y: 100,
+                scale: 0.8
+              }}
+              whileInView={{ 
+                opacity: 1, 
+                y: 0,
+                scale: 1
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.8,
+                delay: index * 0.4,
+                ease: [0.22, 1, 0.36, 1]
+              }}
               className="absolute backdrop-blur-[15px] bg-[rgba(202,202,202,0.15)] flex items-center justify-center rounded-full px-8 py-4"
               style={{
                 top: advantage.position.top,
@@ -81,7 +98,7 @@ export const Adventages = () => {
                   </span>
                 ))}
               </Typography>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
