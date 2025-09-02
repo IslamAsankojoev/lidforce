@@ -1,10 +1,11 @@
-import { Feedback, FAQs, Services, Team, Partners, Adventages, Reviews } from '@/src/widgets'
+import { Feedback, FAQs, Services, Team, Partners, Adventages, Reviews, Hero } from '@/src/widgets'
 
 export default function Home() {
   return (
     <div className="min-h-screen">
-      <Services />
+      <Hero />
       <Adventages />
+      <Services />
       <Partners />
       <Team />
       <Reviews />
