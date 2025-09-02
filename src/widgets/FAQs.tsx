@@ -72,7 +72,11 @@ export const FAQs = () => {
             {faqData.map((faq) => {
               const isOpen = openItems.includes(faq.id)
               return (
-                <div key={faq.id} className="w-full p-4 px-6 bg-white-pure rounded-4xl">
+                <div
+                  key={faq.id}
+                  className="w-full p-4 pl-6 bg-white-pure rounded-4xl cursor-pointer"
+                  onClick={() => toggleItem(faq.id)}
+                >
                   <motion.div
                     initial={{
                       opacity: 0,
@@ -81,12 +85,9 @@ export const FAQs = () => {
                       opacity: 1,
                     }}
                     exit={{ opacity: 0 }}
-                    className=" transition-all cursor-pointer overflow-hidden "
+                    className=" transition-all overflow-hidden "
                   >
-                    <div
-                      className="flex items-center justify-between cursor-pointer"
-                      onClick={() => toggleItem(faq.id)}
-                    >
+                    <div className="flex items-center justify-between">
                       <Typography
                         variant="bodyL"
                         className="font-medium text-[#2e2e30] text-xl leading-relaxed pr-4"
