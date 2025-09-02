@@ -19,3 +19,14 @@ export const DurkCyr = localFont({
     },
   ],
 })
+
+
+export const DrukWideCyr = localFont({
+  src: [
+    {
+      path: './../../../public/fonts/DrukWideCyr/drukwidecyr-bold.otf',
+      weight: '700',
+      style: 'bold',
+    },
+  ],
+})

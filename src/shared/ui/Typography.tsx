@@ -4,7 +4,7 @@ import { FC, HTMLProps } from 'react'
 
 import clsx from 'clsx'
 import { Montserrat } from 'next/font/google'
-import { DurkCyr } from '../constants'
+import { DrukWideCyr } from '../constants'
 
 interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
   children: React.ReactNode
@@ -17,8 +17,8 @@ const montserrat = Montserrat({
 })
 
 const variantStyles: Record<string, string> = {
-  headingXL: clsx('text-headingXL font-extrabold', DurkCyr.className),
-  headingS: clsx('text-headingS font-bold', DurkCyr.className),
+  headingXL: clsx('text-headingXL font-bold', DrukWideCyr.className),
+  headingS: clsx('text-headingS font-bold', DrukWideCyr.className),
   bodyL: clsx('text-bodyL font-medium', montserrat.className),
   bodyS: clsx('text-bodyS font-normal', montserrat.className),
   bodyItalic: clsx('text-bodyItalic font-normal italic', montserrat.className),
