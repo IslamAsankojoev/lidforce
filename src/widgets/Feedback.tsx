@@ -23,7 +23,11 @@ const services = [
   { id: 8, name: 'Трафик', active: false },
 ]
 
-export const Feedback = () => {
+interface FeedbackProps {
+  title?: string
+}
+
+export const Feedback = ({ title }: FeedbackProps) => {
   const { register, handleSubmit, setValue, trigger, watch } = useForm<z.infer<typeof schema>>({
     defaultValues: {
       fullName: '',
@@ -44,7 +48,7 @@ export const Feedback = () => {
           {/* Текстовый блок */}
           <div className="flex flex-col gap-6">
             <Typography variant="headingXL" className="text-white-pure">
-              Напоминаем что у нас ты <br /> можешь заказать:
+              {title || 'Напоминаем что у нас ты можешь заказать:'}
             </Typography>
 
             <p className="font-medium text-white-pure text-lg leading-relaxed">
