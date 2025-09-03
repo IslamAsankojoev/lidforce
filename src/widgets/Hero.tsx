@@ -6,15 +6,15 @@ import { Typography } from '../shared'
 
 const pieces = [
   {
-    src: '/chess/pawn-left.png',
+    src: '/chess/pawn-left.webp',
     alt: 'Пешка слева',
     className: 'hidden md:block w-16 lg:w-50',
     order: 0,
   },
-  { src: '/chess/knight.png', alt: 'Конь', className: 'w-20 lg:w-72', order: 1 },
-  { src: '/chess/rook.png', alt: 'Ладья', className: 'w-20 lg:w-72', order: 3 },
+  { src: '/chess/knight.webp', alt: 'Конь', className: 'w-20 lg:w-72', order: 1 },
+  { src: '/chess/rook.webp', alt: 'Ладья', className: 'w-20 lg:w-72', order: 3 },
   {
-    src: '/chess/pawn-right.png',
+    src: '/chess/pawn-right.webp',
     alt: 'Пешка справа',
     className: 'hidden md:block w-16 lg:w-50',
     order: 4,
@@ -84,7 +84,7 @@ export const Hero = () => {
         >
           <div className="flex items-center justify-center w-full">
             <Image
-              src="/chess/king.png"
+              src="/chess/king.webp"
               alt="Король"
               width={400}
               height={400}
