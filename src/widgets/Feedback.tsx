@@ -58,7 +58,7 @@ export const Feedback = () => {
                 <div
                   key={service.id}
                   className={clsx(
-                    'h-10 px-6 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer border-white-pure border',
+                    'md:h-10 h-8 px-6 rounded-full flex items-center justify-center transition-all duration-200 cursor-pointer border-white-pure border',
                     watch('goal').includes(service.name)
                       ? 'bg-[#fdfeff] text-[#606672]'
                       : 'bg-[rgba(202,202,202,0.15)]   text-white-pure hover:bg-[rgba(202,202,202,0.25)]',
@@ -127,7 +127,7 @@ export const Feedback = () => {
               <div className="flex justify-end">
                 <button
                   type="submit"
-                  className="bg-accent-primary h-[63px] py-5 rounded-full flex items-center justify-center hover:bg-accent-primary/80 transition-colors duration-200 border border-white-pure px-20 cursor-pointer"
+                  className="bg-accent-primary h-[63px] py-5 rounded-full flex items-center justify-center hover:bg-accent-primary/80 transition-colors duration-200 w-full md:w-auto border border-white-pure px-20 cursor-pointer"
                 >
                   <span className="font-medium text-[#fdfeff] text-lg">Отправить заявку</span>
                 </button>

@@ -2,6 +2,13 @@
 
 import { colors, Typography } from '../shared'
 import Image from 'next/image'
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from '../shadcn/components/ui/carousel'
 
 interface Partner {
   id: number
@@ -73,24 +80,46 @@ export const Partners = () => {
           </div>
 
           {/* Логотипы партнеров */}
-          <div className="flex gap-10 items-center justify-center">
-            {partnersData.map((partner) => (
-              <div key={partner.id} className="bg-white flex items-center justify-center">
-                {partner.hasImage ? (
-                  <div className="relative" style={{ width: '200px', height: '150px' }}>
-                    <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
-                  </div>
-                ) : (
-                  <div className="w-full h-full flex items-center justify-center p-4">
-                    <div className="w-full h-full bg-grey-neutral rounded-[30px] flex items-center justify-center">
-                      <Typography variant="bodyS" className="text-text-muted">
-                        {partner.name}
-                      </Typography>
+          <div className="px-12">
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {partnersData.map((partner) => (
+                  <CarouselItem 
+                    key={partner.id} 
+                    className="pl-2 md:pl-4 basis-full sm:basis-1/3 lg:basis-1/6"
+                  >
+                    <div className="bg-white flex items-center justify-center p-4">
+                      {partner.hasImage ? (
+                        <div className="relative w-full h-24 sm:h-32 lg:h-36">
+                          <Image 
+                            src={partner.logo} 
+                            alt={partner.name} 
+                            fill 
+                            className="object-contain" 
+                          />
+                        </div>
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center p-4">
+                          <div className="w-full h-full bg-grey-neutral rounded-[30px] flex items-center justify-center">
+                            <Typography variant="bodyS" className="text-text-muted">
+                              {partner.name}
+                            </Typography>
+                          </div>
+                        </div>
+                      )}
                     </div>
-                  </div>
-                )}
-              </div>
-            ))}
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious />
+              <CarouselNext />
+            </Carousel>
           </div>
         </div>
       </div>
