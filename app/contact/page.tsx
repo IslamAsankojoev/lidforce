@@ -1,36 +1,36 @@
-import { Instagram, Mail, Telegram, Typography, WhatsApp } from '@/src/shared'
+import { colors, Instagram, Mail, Telegram, Typography, WhatsApp } from '@/src/shared'
 import { Feedback } from '@/src/widgets'
 import { MapPin } from 'lucide-react'
 
 export default function Contact() {
   return (
     <>
-      <div className="mb-20 rounded-[60px] mt-20">
+      <div className="mb-20 rounded-b-[60px] bg-white-pure pt-20">
         <div className="container flex justify-center">
-          <div className="flex flex-col md:flex-row justify-center gap-6 md:rounded-full md:bg-white-pure p-4">
+          <div className="flex flex-col md:flex-row justify-center gap-6 md:rounded-full md:bg-dark-deep p-4">
             <a
               href="#"
-              className="rounded-full bg-dark-deep p-2 flex items-center gap-2 px-6 text-white-pure hover:bg-dark-deep/80 transition-colors duration-200 cursor-pointer font-medium"
+              className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-6 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <WhatsApp className="size-7" />| +996 509 170 201
+              <WhatsApp className="size-7" color={colors['dark-deep']} />| +996 509 170 201
             </a>
             <a
               href="#"
-              className="rounded-full bg-dark-deep p-2 flex items-center gap-2 px-4 text-white-pure hover:bg-dark-deep/80 transition-colors duration-200 cursor-pointer font-medium"
+              className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-4 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <Telegram className="size-5" />| Azizbekov_E
+              <Telegram className="size-5" color={colors['dark-deep']} />| Azizbekov_E
             </a>
             <a
               href="#"
-              className="rounded-full bg-dark-deep p-2 flex items-center gap-2 px-4 text-white-pure hover:bg-dark-deep/80 transition-colors duration-200 cursor-pointer font-medium"
+              className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-4 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <Instagram className="size-5" />| lid.force
+              <Instagram className="size-5" color={colors['dark-deep']} />| lid.force
             </a>
             <a
               href="#"
-              className="rounded-full bg-dark-deep p-2 flex items-center gap-2 px-4 text-white-pure hover:bg-dark-deep/80 transition-colors duration-200 cursor-pointer font-medium"
+              className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-4 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <Mail className="size-5" />| aeldiar34@gmail.com
+              <Mail className="size-5" color={colors['dark-deep']} />| aeldiar34@gmail.com
             </a>
           </div>
         </div>
@@ -38,7 +38,7 @@ export default function Contact() {
           <div className="flex justify-start mb-4">
             <Typography
               variant="bodyS"
-              className="text-white-pure bg-dark-deep p-4 rounded-full flex items-center gap-2"
+              className="bg-grey-soft/25 p-4 rounded-full flex items-center gap-2"
             >
               <MapPin strokeWidth={1.75} /> Г.Бишкек рандомный адрес если он будет
             </Typography>

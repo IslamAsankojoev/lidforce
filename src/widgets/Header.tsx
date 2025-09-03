@@ -3,13 +3,14 @@
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
 import { Sheet, SheetContent, SheetTrigger } from '@/src/shadcn/components/ui/sheet'
-import { Logo, routes } from '@/src/shared'
+import { colors, Logo, routes } from '@/src/shared'
 import { usePathname } from 'next/navigation'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const pathname = usePathname().split('/')[1]
   const isActive = (href: string) => pathname === href.split('/')[1]
+  const isContact = pathname === 'contact'
   return (
     <header className="w-full fixed top-0 z-50">
       <div className="container mx-auto px-0 md:px-4">
@@ -19,7 +20,7 @@ export const Header = () => {
             <div className="w-12 h-12 relative overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-5 h-11 rounded-full flex items-center justify-center relative">
-                  <Logo />
+                  <Logo color={isContact ? colors['grey-soft'] : colors['white-pure']} />
                 </div>
               </div>
             </div>
@@ -34,7 +35,9 @@ export const Header = () => {
                 className={`font-medium text-lg px-3 py-3 transition-colors duration-200 ${
                   isActive(item.href)
                     ? 'text-accent-primary border-b border-accent-primary'
-                    : 'text-white-pure hover:text-accent-primary'
+                    : `${
+                        isContact ? 'text-grey-soft' : 'text-white-pure'
+                      } hover:text-accent-primary`
                 }`}
               >
                 {item.name}
