@@ -8,78 +8,150 @@ import { useState } from 'react'
 interface Case {
   id: number
   title: string
-  description: string
   image: string
-  category: string
-  results: string[]
+  categories: number[]
 }
+
+const categoriesData = [
+  {
+    id: 1,
+    title: 'Все кейсы',
+  },
+  {
+    id: 2,
+    title: 'SMM',
+  },
+  {
+    id: 3,
+    title: 'Таргет',
+  },
+
+  {
+    id: 5,
+    title: 'Дизайн',
+  },
+
+  {
+    id: 6,
+    title: 'Продакшн',
+  },
+  {
+    id: 7,
+    title: 'Сайты',
+  },
+  {
+    id: 8,
+    title: 'Брендинг',
+  },
+  {
+    id: 0,
+    title: 'и другие',
+  },
+]
 
 const cases: Case[] = [
   {
     id: 1,
-    title: 'Интернет-магазин электроники',
-    description:
-      'Увеличили продажи на 340% за 6 месяцев через комплексную настройку рекламы в Google Ads и Яндекс.Директ',
-    image: '/cases/electronics-store.jpg',
-    category: 'E-commerce',
-    results: ['+340% продаж', '+250% трафика', 'ROI 4.2x'],
+    title: 'Elit House',
+    image: '/cases/elit-house.png',
+    categories: [1, 5, 6],
   },
   {
     id: 2,
-    title: 'Стоматологическая клиника',
-    description:
-      'Привлекли 150+ новых пациентов в месяц через таргетированную рекламу в социальных сетях',
-    image: '/cases/dental-clinic.jpg',
-    category: 'Медицина',
-    results: ['150+ пациентов/мес', 'CPL -60%', 'ROI 3.8x'],
+    title: 'Elit Invest',
+    image: '/cases/elit-invest.png',
+    categories: [1, 3, 8],
   },
   {
     id: 3,
-    title: 'Строительная компания',
-    description:
-      'Заполнили портфель заказов на 8 месяцев вперед через SEO-продвижение и контекстную рекламу',
-    image: '/cases/construction.jpg',
-    category: 'Строительство',
-    results: ['+280% заявок', '8 мес заказов', 'ROI 5.1x'],
+    title: 'Ayat',
+    image: '/cases/ayat.png',
+    categories: [1, 2, 3],
   },
   {
     id: 4,
-    title: 'Образовательный центр',
-    description:
-      'Увеличили набор студентов в 4 раза через комплексную digital-стратегию и автоматизацию продаж',
-    image: '/cases/education.jpg',
-    category: 'Образование',
-    results: ['+400% студентов', '+180% конверсия', 'ROI 4.7x'],
+    title: 'Legenda Lux',
+    image: '/cases/legenda-lux.png',
+    categories: [1, 3, 8],
   },
   {
     id: 5,
-    title: 'Ресторан доставки',
-    description:
-      'Вышли в топ-3 по доставке в городе через оптимизацию рекламы и улучшение пользовательского опыта',
-    image: '/cases/restaurant.jpg',
-    category: 'HoReCa',
-    results: ['Топ-3 города', '+220% заказов', 'ROI 3.9x'],
+    title: 'Mobi Market',
+    image: '/cases/mobi-market.png',
+    categories: [1, 2, 8],
   },
   {
     id: 6,
-    title: 'IT-компания',
-    description:
-      'Увеличили количество B2B-клиентов на 200% через LinkedIn-рекламу и email-маркетинг',
-    image: '/cases/it-company.jpg',
-    category: 'IT',
-    results: ['+200% B2B клиентов', '+150% лидов', 'ROI 4.5x'],
+    title: 'Rooz Beauty',
+    image: '/cases/rooz-beauty.png',
+    categories: [1, 5, 3],
+  },
+  {
+    id: 7,
+    title: 'Liana Flowers',
+    image: '/cases/liana-flowers.png',
+    categories: [1, 7, 8],
+  },
+  {
+    id: 8,
+    title: 'Encar',
+    image: '/cases/encar.png',
+    categories: [1, 3, 8],
+  },
+  {
+    id: 9,
+    title: 'Marsel',
+    image: '/cases/marsel.png',
+    categories: [1, 2, 8],
+  },
+  {
+    id: 10,
+    title: 'Liana Flowers',
+    image: '/cases/liana-flowers.png',
+    categories: [1, 2, 3],
+  },
+  {
+    id: 11,
+    title: 'Doscar trade',
+    image: '/cases/doscar-trade.png',
+    categories: [1, 2, 3],
+  },
+  {
+    id: 12,
+    title: 'Next Protein',
+    image: '/cases/next-protein.png',
+    categories: [1, 2, 3],
+  },
+  {
+    id: 13,
+    title: 'Obraz KG',
+    image: '/cases/obraz-kg.png',
+    categories: [1, 2, 3],
+  },
+  {
+    id: 14,
+    title: 'Ожак кебаб',
+    image: '/cases/ojak-kebab.png',
+    categories: [1, 2, 3],
+  },
+  {
+    id: 15,
+    title: 'Sapar umra',
+    image: '/cases/sapar-umra.png',
+    categories: [1, 2, 3],
+  },
+  {
+    id: 16,
+    title: 'Sapat Auto',
+    image: '/cases/sapat-auto.png',
+    categories: [1, 2, 3, 0],
   },
 ]
 
-const categories = ['Все кейсы', 'SMM', 'Таргет', 'Дизайн', 'Продакшн', 'Сайты', 'Брендинг', 'и другие']
-
 export const Cases = () => {
-  const [activeCategory, setActiveCategory] = useState('Все')
+  const [activeCategory, setActiveCategory] = useState(categoriesData[0].id)
 
-  const filteredCases =
-    activeCategory === 'Все'
-      ? cases
-      : cases.filter((caseItem) => caseItem.category === activeCategory)
+  const filteredCases = cases.filter((caseItem) => caseItem.categories.includes(activeCategory))
 
   return (
     <section className="bg-bg-surface py-20">
@@ -106,22 +178,33 @@ export const Cases = () => {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-wrap gap-4 mb-12"
         >
-          {categories.map((category) => (
+          {categoriesData.map((category) => (
             <button
-              key={category}
-              onClick={() => setActiveCategory(category)}
-              className={`px-6 py-2 rounded-full transition-all duration-300 border border-dark-deep cursor-pointer ${
-                activeCategory === category
+              key={category.id}
+              onClick={() => setActiveCategory(category.id)}
+              className={`md:px-6 md:py-2 px-4 py-1 rounded-full transition-all duration-300 border border-dark-deep cursor-pointer ${
+                activeCategory === category.id
                   ? 'bg-white-pure text-dark-deep'
                   : 'text-grey-soft hover:bg-grey-soft/10 hover:text-white-pure'
               }`}
             >
               <Typography variant="button" className="text-inherit">
-                {category}
+                {category.title}
               </Typography>
             </button>
           ))}
         </motion.div>
+
+        {/* Cases */}
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 relative min-h-[600px] rounded-4xl p-10 overflow-hidden border border-dark-deep">
+          <div className="w-[600px] h-[600px] absolute top-0 -translate-x-1/2 -translate-y-1/2 left-0 bg-accent-primary rounded-full z-1 opacity-90 blur-[200px]" />
+          <div className="w-[300px] h-[300px] absolute top-0 translate-x-1/2 -translate-y-1/2 right-0 bg-accent-primary rounded-full z-1 opacity-90 blur-[200px]" />
+          {filteredCases.map((caseItem) => (
+            <div key={caseItem.id} className="relative z-2 w-auto h-[120px]">
+              <Image src={caseItem.image} alt={caseItem.title} fill objectFit="contain" />
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   )

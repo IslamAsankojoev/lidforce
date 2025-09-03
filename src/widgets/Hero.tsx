@@ -2,21 +2,21 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useRef } from 'react'
-import { Typography } from '../shared'
+import { Typography, useScreenSize } from '../shared'
 
 const pieces = [
   {
     src: '/chess/pawn-left.webp',
     alt: 'Пешка слева',
-    className: 'hidden md:block w-16 lg:w-50',
+    className: 'w-40 lg:w-50',
     order: 0,
   },
-  { src: '/chess/knight.webp', alt: 'Конь', className: 'w-20 lg:w-72', order: 1 },
-  { src: '/chess/rook.webp', alt: 'Ладья', className: 'w-20 lg:w-72', order: 3 },
+  { src: '/chess/knight.webp', alt: 'Конь', className: 'w-60 lg:w-72', order: 1 },
+  { src: '/chess/rook.webp', alt: 'Ладья', className: 'w-60 lg:w-72', order: 3 },
   {
     src: '/chess/pawn-right.webp',
     alt: 'Пешка справа',
-    className: 'hidden md:block w-16 lg:w-50',
+    className: 'w-40 lg:w-50',
     order: 4,
   },
 ]
@@ -26,33 +26,34 @@ const container = {
   show: {},
 }
 
-const item = (i: number) => {
-  let moveX = 0
-  if (i === 0) moveX = -420 // пешка слева
-  if (i === 1) moveX = -230 // конь
-  if (i === 2) moveX = 230 // ладья
-  if (i === 3) moveX = 420 // пешка справа
-
-  return {
-    hidden: {
-      opacity: 0,
-      scale: 0.3,
-      x: 0,
-      y: 0,
-      zIndex: -1,
-    },
-    show: {
-      opacity: 1,
-      scale: 1,
-      x: moveX,
-      y: 0,
-      zIndex: 1,
-    },
-  }
-}
-
 export const Hero = () => {
   const ref = useRef<HTMLDivElement>(null)
+  const { md } = useScreenSize()
+
+  const item = (i: number) => {
+    let moveX = 0
+    if (i === 0) moveX = md ? -420 : -200
+    if (i === 1) moveX = md ? -230 : -100
+    if (i === 2) moveX = md ? 230 : 100
+    if (i === 3) moveX = md ? 420 : 200
+
+    return {
+      hidden: {
+        opacity: 0,
+        scale: 0.3,
+        x: 0,
+        y: 0,
+        zIndex: -1,
+      },
+      show: {
+        opacity: 1,
+        scale: 1,
+        x: moveX,
+        y: 0,
+        zIndex: 1,
+      },
+    }
+  }
 
   return (
     <section className="relative isolate min-h-screen border-b border-dark-deep">
@@ -88,7 +89,7 @@ export const Hero = () => {
               alt="Король"
               width={400}
               height={400}
-              className="w-28 lg:w-[500px]"
+              className="w-96 lg:w-[500px]"
               style={{
                 filter: 'drop-shadow(5px 5px 5px #222)',
               }}
@@ -113,7 +114,7 @@ export const Hero = () => {
 
         {/* Pill */}
         <motion.div className="mx-auto w-fit rounded-full bg-grey-soft/15 px-6 py-3 backdrop-blur-sm text-white/90 text-sm md:text-base font-semibold z-50 -mt-16 relative">
-          <Typography variant="headingS" className="text-white/90">
+          <Typography variant="headingS" className="text-white/90 text-center">
             КОТОРЫЙ РЕАЛЬНО РАБОТАЕТ
           </Typography>
         </motion.div>

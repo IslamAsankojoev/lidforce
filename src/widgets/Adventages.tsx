@@ -1,13 +1,17 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import { Typography } from '../shared'
+import { Typography, useScreenSize } from '../shared'
 
 interface Advantage {
   id: number
   text: string
   highlightedText: string
   position: {
+    top: string
+    left: string
+  }
+  mobilePosition: {
     top: string
     left: string
   }
@@ -23,6 +27,10 @@ const advantagesData: Advantage[] = [
       top: '0',
       left: '0',
     },
+    mobilePosition: {
+      top: '0',
+      left: '0',
+    },
     zIndex: 4,
   },
   {
@@ -32,6 +40,10 @@ const advantagesData: Advantage[] = [
     position: {
       top: '48px',
       left: '328px',
+    },
+    mobilePosition: {
+      top: '118px',
+      left: '0',
     },
     zIndex: 3,
   },
@@ -43,6 +55,10 @@ const advantagesData: Advantage[] = [
       top: '103px',
       left: '143px',
     },
+    mobilePosition: {
+      top: '203px',
+      left: '0',
+    },
     zIndex: 2,
   },
   {
@@ -53,38 +69,43 @@ const advantagesData: Advantage[] = [
       top: '158px',
       left: '723px',
     },
+    mobilePosition: {
+      top: '358px',
+      left: '0',
+    },
     zIndex: 1,
   },
 ]
 
 export const Adventages = () => {
+  const { md, lg } = useScreenSize()
   return (
     <section className="bg-bg-surface py-20 relative border-b border-dark-deep">
       <div className="container mx-auto">
-        <div className="relative h-[240px]">
+        <div className="relative md:h-[240px] h-[420px]">
           {advantagesData.map((advantage, index) => (
             <motion.div
               key={advantage.id}
-              initial={{ 
-                opacity: 0, 
+              initial={{
+                opacity: 0,
                 y: 100,
-                scale: 0.8
+                scale: 0.8,
               }}
-              whileInView={{ 
-                opacity: 1, 
+              whileInView={{
+                opacity: 1,
                 y: 0,
-                scale: 1
+                scale: 1,
               }}
               viewport={{ once: true }}
               transition={{
                 duration: 0.8,
                 delay: index * 0.4,
-                ease: [0.22, 1, 0.36, 1]
+                ease: [0.22, 1, 0.36, 1],
               }}
               className="absolute backdrop-blur-[15px] bg-[rgba(202,202,202,0.15)] flex items-center justify-center rounded-full px-8 py-4"
               style={{
-                top: advantage.position.top,
-                left: advantage.position.left,
+                top: md ? advantage.position.top : advantage.mobilePosition.top,
+                left: md ? advantage.position.left : advantage.mobilePosition.left,
                 zIndex: advantage.zIndex,
               }}
             >

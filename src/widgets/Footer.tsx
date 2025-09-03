@@ -8,7 +8,7 @@ export const Footer = () => {
   const windowWidth = typeof window === 'undefined' ? 1024 : window.innerWidth
   return (
     <>
-      <footer className={clsx('relative rounded-4xl')}>
+      <footer className='relative rounded-4xl hidden sm:block'>
         <svg
           width={windowWidth > 1024 ? '1980' : '100%'}
           height={339}

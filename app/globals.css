@@ -133,13 +133,13 @@
 }
 
 @theme {
-  --text-headingXL: clamp(45px, 3vw, 45px);
-  --text-headingS: clamp(20px, 2.5vw, 20px);
-  --text-bodyL: clamp(20px, 2.5vw, 20px);
-  --text-bodyS: clamp(16px, 2vw, 16px);
-  --text-bodyItalic: clamp(16px, 2vw, 16px);
-  --text-captionM: clamp(16px, 2vw, 16px);
-  --text-button: clamp(18px, 2vw, 18px);
+  --text-headingXL: clamp(28px, 7vw, 45px);   /* Большой заголовок */
+  --text-headingS: clamp(18px, 5vw, 24px);   /* Малый заголовок */
+  --text-bodyL:    clamp(16px, 4.5vw, 20px); /* Основной текст крупный */
+  --text-bodyS:    clamp(14px, 4vw, 16px);   /* Обычный текст */
+  --text-bodyItalic: clamp(14px, 4vw, 16px); /* Курсив, как bodyS */
+  --text-captionM: clamp(12px, 3.5vw, 14px); /* Подписи, мелкий текст */
+  --text-button:   clamp(15px, 4.5vw, 18px); /* Кнопки */
 
   /* Кастомные цвета */
   --accent-primary: #35b6d3;

@@ -58,7 +58,7 @@ const partnersData: Partner[] = [
 export const Partners = () => {
   return (
     <section
-      className="bg-white-pure py-20"
+      className="bg-white-pure py-20 overflow-hidden"
       style={{
         borderBottom: `2px solid ${colors['bg-surface']}`,
       }}
@@ -78,12 +78,7 @@ export const Partners = () => {
               <div key={partner.id} className="bg-white flex items-center justify-center">
                 {partner.hasImage ? (
                   <div className="relative" style={{ width: '200px', height: '150px' }}>
-                                          <Image
-                        src={partner.logo}
-                        alt={partner.name}
-                        fill
-                        className="object-contain"
-                      />
+                    <Image src={partner.logo} alt={partner.name} fill className="object-contain" />
                   </div>
                 ) : (
                   <div className="w-full h-full flex items-center justify-center p-4">

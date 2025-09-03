@@ -95,7 +95,7 @@ export const Team = () => {
               {teamData.slice(0, 1).map((member) => (
                 <div
                   key={member.id}
-                  className="bg-grey-neutral rounded-[30px] w-[323px] h-[432px] relative overflow-hidden border-white-pure"
+                  className="bg-grey-neutral rounded-[30px] md:w-[323px] md:h-[432px] w-[153px] h-[232px] relative overflow-hidden border-white-pure"
                 >
                   {member.hasImage ? (
                     <div className="absolute inset-0">
@@ -122,13 +122,13 @@ export const Team = () => {
                   {/* Информация о члене команды */}
                   <div className="absolute bottom-5 left-2.5 right-2.5">
                     <div className="flex flex-col gap-1 items-start">
-                      <div className="bg-white-pure rounded-[600px] px-5 py-2 flex items-center justify-center">
+                      <div className="bg-white-pure rounded-full md:px-5 md:py-2 px-3 py-1 flex items-center justify-center">
                         <Typography variant="bodyS" className="text-bg-surface">
                           {member.name}
                         </Typography>
                       </div>
-                      <div className="bg-[rgba(202,202,202,0.15)] backdrop-blur-[5px] rounded-[600px] px-5 py-2 flex items-center justify-center border border-white-pure">
-                        <Typography variant="bodyS" className="text-white-pure italic">
+                      <div className="bg-[rgba(202,202,202,0.15)] backdrop-blur-[5px] hidden sm:flex rounded-full md:px-5 md:py-2 px-3 py-1  items-center justify-center border border-white-pure">
+                        <Typography variant="bodyItalic" className="text-white-pure italic">
                           {member.position}
                         </Typography>
                       </div>
@@ -143,7 +143,7 @@ export const Team = () => {
               {teamData.slice(1, 4).map((member) => (
                 <div
                   key={member.id}
-                  className="bg-grey-neutral rounded-[30px] w-[323px] h-[432px] relative overflow-hidden border-white-pure border-2"
+                  className="bg-grey-neutral rounded-[30px] md:w-[323px] md:h-[432px] w-[153px] h-[232px] relative overflow-hidden border-white-pure border-2"
                   style={{
                     marginRight: '-20px',
                     zIndex: 4 - member.id,
@@ -174,12 +174,12 @@ export const Team = () => {
                   {/* Информация о члене команды */}
                   <div className="absolute bottom-5 left-2.5 right-2.5">
                     <div className="flex flex-col gap-1 items-end">
-                      <div className="bg-white-pure rounded-[600px] px-5 py-2 flex items-center justify-center">
+                      <div className="bg-white-pure rounded-full md:px-5 md:py-2 px-3 py-1 flex items-center justify-center">
                         <Typography variant="bodyS" className="text-bg-surface">
                           {member.name}
                         </Typography>
                       </div>
-                      <div className="bg-[rgba(202,202,202,0.15)] backdrop-blur-[5px] rounded-[600px] px-5 py-2 flex items-center justify-center border border-white-pure">
+                      <div className="bg-[rgba(202,202,202,0.15)] backdrop-blur-[5px] rounded-full md:px-5 md:py-2 px-3 py-1 hidden sm:flex items-center justify-center border border-white-pure">
                         <Typography variant="bodyS" className="text-white-pure italic">
                           {member.position}
                         </Typography>
@@ -196,7 +196,7 @@ export const Team = () => {
             {teamData.slice(4, 8).map((member) => (
               <div
                 key={member.id}
-                className="bg-grey-neutral rounded-[30px] w-[323px] h-[432px] relative overflow-hidden border-white-pure border-2"
+                className="bg-grey-neutral rounded-[30px] md:w-[323px] md:h-[432px] w-[153px] h-[232px] relative overflow-hidden border-white-pure border-2"
                 style={{
                   marginLeft: '-20px',
                   zIndex: 8 - member.id,
@@ -227,12 +227,12 @@ export const Team = () => {
                 {/* Информация о члене команды */}
                 <div className="absolute bottom-5 left-2.5 right-2.5">
                   <div className="flex flex-col gap-1 items-end">
-                    <div className="bg-white-pure rounded-[600px] px-5 py-2 flex items-center justify-center">
+                    <div className="bg-white-pure rounded-full md:px-5 md:py-2 px-3 py-1 flex items-center justify-center">
                       <Typography variant="bodyS" className="text-bg-surface">
                         {member.name}
                       </Typography>
                     </div>
-                    <div className="bg-[rgba(202,202,202,0.15)] backdrop-blur-[5px] rounded-[600px] px-5 py-2 flex items-center justify-center border border-white-pure">
+                    <div className="bg-[rgba(202,202,202,0.15)] backdrop-blur-[5px] rounded-full md:px-5 md:py-2 px-3 py-1 hidden sm:flex items-center justify-center border border-white-pure">
                       <Typography variant="bodyS" className="text-white-pure italic">
                         {member.position}
                       </Typography>

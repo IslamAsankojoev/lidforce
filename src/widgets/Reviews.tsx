@@ -105,7 +105,7 @@ export const Reviews = () => {
         <div className="flex flex-col gap-10">
           {/* Табы */}
           <Tabs defaultValue="reviews" className="w-full">
-            <TabsList className="bg-[rgba(202,202,202,0.15)] h-fit rounded-[60px] w-fit relative">
+            <TabsList className="bg-[rgba(202,202,202,0.15)] h-fit rounded-[60px] w-fit relative hidden sm:flex">
               <TabsTrigger
                 value="reviews"
                 className="text-white-pure cursor-pointer rounded-[60px] px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
