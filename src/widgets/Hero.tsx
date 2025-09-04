@@ -56,7 +56,7 @@ export const Hero = () => {
   }
 
   return (
-    <section className="relative isolate min-h-screen border-b border-dark-deep">
+    <section className="relative isolate min-h-screen border-b border-dark-deep overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-20 lg:py-28">
         <motion.h1
           initial={{ opacity: 0, scale: 0.96, y: 400 }}

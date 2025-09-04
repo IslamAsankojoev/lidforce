@@ -82,6 +82,45 @@ const servicesData: ServiceItem[] = [
   },
 ]
 
+const approachesData = [
+  {
+    id: 1,
+    title: 'Определяем цели и выявляем потребности',
+    description: 'Определяем цели и выявляем потребности',
+    image: '/approaches/pen.png',
+  },
+  {
+    id: 2,
+    title: 'Предлагаем эффективные механики решения',
+    description: 'Предлагаем эффективные механики решения',
+    image: '/approaches/up.png',
+  },
+  {
+    id: 3,
+    title: 'Создаем стратегию и ставим задачи',
+    description: 'Создаем стратегию и ставим задачи',
+    image: '/approaches/mark.png',
+  },
+  {
+    id: 4,
+    title: 'Добиваемся результатов',
+    description: 'Добиваемся результатов',
+    image: '/approaches/circle.png',
+  },
+  {
+    id: 5,
+    title: 'Ставим новые цели и задачи, предлагаем новые решения',
+    description: 'Ставим новые цели и задачи, предлагаем новые решения',
+    image: '/approaches/doc.png',
+  },
+  {
+    id: 6,
+    title: 'Фиксируем показатели',
+    description: 'Фиксируем показатели',
+    image: '/approaches/diogram.png',
+  },
+]
+
 export default function Service() {
   return (
     <>
@@ -196,104 +235,34 @@ export default function Service() {
             </div>
 
             {/* Десктопная версия - сетка 2x3 */}
-            <div className="grid lg:grid-cols-3 gap-5 max-w-[1180px] mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-3 md:gap-5 gap-3 max-w-[1180px] mx-auto">
               {/* Первый ряд */}
-              <div className="bg-dark-deep h-[310px] rounded-[40px] p-8 flex flex-col justify-between relative overflow-hidden">
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white-pure w-[60px] h-[60px] rounded-[60px] flex items-center justify-center">
-                    <Typography variant="headingS" className="text-bg-surface">
-                      1
+              {approachesData.map((approach) => (
+                <div
+                  key={approach.id}
+                  className="bg-dark-deep md:h-[310px] h-[240px] rounded-[40px] md:p-8 p-4 flex flex-col justify-between relative overflow-hidden"
+                >
+                  <div className="flex flex-col gap-4">
+                    <div className="bg-white-pure md:w-[60px] md:h-[60px] w-[40px] h-[40px] rounded-[60px] flex items-center justify-center">
+                      <Typography
+                        variant="headingS"
+                        className="text-bg-surface"
+                      >
+                        {approach.id}
+                      </Typography>
+                    </div>
+                    <Typography
+                      variant="bodyL"
+                      className="text-white-pure leading-[1.3]"
+                    >
+                      {approach.title}
                     </Typography>
                   </div>
-                  <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
-                    Определяем цели и выявляем потребности
-                  </Typography>
-                </div>
-                <div className="absolute bottom-4 right-4 w-[120px] h-[120px]">
-                  <Image src="/approaches/pen.png" alt="step1" fill />
-                </div>
-              </div>
-
-              <div className="bg-dark-deep h-[310px] rounded-[40px] p-8 flex flex-col justify-between relative overflow-hidden">
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white-pure w-[60px] h-[60px] rounded-[60px] flex items-center justify-center">
-                    <Typography variant="headingS" className="text-bg-surface">
-                      2
-                    </Typography>
+                  <div className="absolute bottom-4 right-4 w-[80px] h-[80px] md:w-[120px] md:h-[120px]">
+                    <Image src={approach.image} alt={approach.title} fill />
                   </div>
-                  <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
-                    Предлагаем эффективные механики решения
-                  </Typography>
                 </div>
-                <div className="absolute bottom-4 right-4 w-[120px] h-[120px]">
-                  <Image src="/approaches/up.png" alt="step2" fill />
-                </div>
-              </div>
-
-              <div className="bg-dark-deep h-[310px] rounded-[40px] p-8 flex flex-col justify-between relative overflow-hidden">
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white-pure w-[60px] h-[60px] rounded-[60px] flex items-center justify-center">
-                    <Typography variant="headingS" className="text-bg-surface">
-                      3
-                    </Typography>
-                  </div>
-                  <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
-                    Создаем стратегию и ставим задачи
-                  </Typography>
-                </div>
-                <div className="absolute bottom-4 right-4 w-[120px] h-[120px]">
-                  <Image src="/approaches/mark.png" alt="step3" fill />
-                </div>
-              </div>
-
-              {/* Второй ряд */}
-              <div className="bg-dark-deep h-[310px] rounded-[40px] p-8 flex flex-col justify-between relative overflow-hidden">
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white-pure w-[60px] h-[60px] rounded-[60px] flex items-center justify-center">
-                    <Typography variant="headingS" className="text-bg-surface">
-                      4
-                    </Typography>
-                  </div>
-                  <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
-                    Добиваемся результатов
-                  </Typography>
-                </div>
-                <div className="absolute bottom-4 right-4 w-[120px] h-[120px]">
-                  <Image src="/approaches/circle.png" alt="step4" fill />
-                </div>
-              </div>
-
-              <div className="bg-dark-deep h-[310px] rounded-[40px] p-8 flex flex-col justify-between relative overflow-hidden">
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white-pure w-[60px] h-[60px] rounded-[60px] flex items-center justify-center">
-                    <Typography variant="headingS" className="text-bg-surface">
-                      5
-                    </Typography>
-                  </div>
-                  <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
-                    Ставим новые цели и задачи, предлагаем новые решения
-                  </Typography>
-                </div>
-                <div className="absolute bottom-4 right-4 w-[120px] h-[120px]">
-                  <Image src="/approaches/doc.png" alt="step5" fill />
-                </div>
-              </div>
-
-              <div className="bg-dark-deep h-[310px] rounded-[40px] p-8 flex flex-col justify-between relative overflow-hidden">
-                <div className="flex flex-col gap-4">
-                  <div className="bg-white-pure w-[60px] h-[60px] rounded-[60px] flex items-center justify-center">
-                    <Typography variant="headingS" className="text-bg-surface">
-                      6
-                    </Typography>
-                  </div>
-                  <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
-                    Фиксируем показатели
-                  </Typography>
-                </div>
-                <div className="absolute bottom-4 right-4 w-[120px] h-[120px]">
-                  <Image src="/approaches/diogram.png" alt="step6" fill />
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </div>
