@@ -105,12 +105,15 @@ export const Reviews = () => {
         <div className="flex flex-col gap-10">
           {/* Табы */}
           <Tabs defaultValue="reviews" className="w-full">
-            <TabsList className="bg-[rgba(202,202,202,0.15)] h-fit rounded-[60px] w-fit relative hidden sm:flex">
+            <TabsList className="bg-[rgba(202,202,202,0.15)] h-fit rounded-[60px] w-fit relative flex sm:flex">
               <TabsTrigger
                 value="reviews"
                 className="text-white-pure cursor-pointer rounded-[60px] px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
               >
-                <Typography variant="headingXL" className="!text-headingS group-data-[state=active]:!text-headingXL">
+                <Typography
+                  variant="headingXL"
+                  className="md:!text-headingS md:group-data-[state=active]:!text-headingXL !text-bodyL group-data-[state=active]:!text-bodyL"
+                >
                   отзывы
                 </Typography>
               </TabsTrigger>
@@ -118,7 +121,10 @@ export const Reviews = () => {
                 value="video-reviews"
                 className="text-white-pure cursor-pointer rounded-[60px] px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
               >
-                <Typography variant="headingXL" className="!text-headingS group-data-[state=active]:!text-headingXL">
+                <Typography
+                  variant="headingXL"
+                  className="md:!text-headingS md:group-data-[state=active]:!text-headingXL !text-bodyL group-data-[state=active]:!text-bodyL"
+                >
                   видеоотзывы
                 </Typography>
               </TabsTrigger>
@@ -142,10 +148,10 @@ export const Reviews = () => {
                         key={review.id}
                         className="pl-5 md:pl-10 md:basis-1/2 lg:basis-1/3 mt-20"
                       >
-                        <div className="relative rounded-[30px] p-6 flex flex-col">
+                        <div className="relative rounded-[30px] p-6 md:p-0 flex flex-col">
                           {/* Аватар */}
-                          <div className="flex justify-center">
-                            <div className="relative w-20 h-20 rounded-full -mt-2 ml-1">
+                          <div className="flex justify-center relative z-10">
+                            <div className="relative w-20 h-20 rounded-full -mt-2 md:mt-4 ml-1">
                               <Image
                                 src={review.avatar as string}
                                 alt={review.name}
@@ -164,36 +170,37 @@ export const Reviews = () => {
                             >
                               <path
                                 d="M186 0C203.977 0 219.929 8.98298 229.521 22.7051C238.452 35.4796 250.788 48.3242 266.375 48.3242H337C353.569 48.3242 367 61.7557 367 78.3242V342.999C367 359.568 353.569 372.999 337 372.999H30C13.4315 372.999 0 359.568 0 342.999V78.3242C0 61.7557 13.4315 48.3242 30 48.3242H105.625C121.212 48.3242 133.548 35.4796 142.479 22.7051C152.071 8.98298 168.023 0 186 0Z"
-                                fill={colors['grey-neutral']}
-                                fillOpacity="0.15"
+                                fill={colors['dark-deep']}
                               />
                             </svg>
                           </div>
-                          <div className="h-4" />
-                          {/* Текст отзыва */}
-                          <div className="flex-1 mb-6">
-                            <Typography
-                              variant="bodyS"
-                              className="text-white-pure leading-relaxed line-clamp-6"
-                            >
-                              {review.text}
-                            </Typography>
-                          </div>
+                          <div className="flex flex-col bg-dark-deep rounded-[30px] p-6 relative z-10 w-full">
+                            <div className="h-4" />
+                            {/* Текст отзыва */}
+                            <div className="flex-1 mb-6">
+                              <Typography
+                                variant="bodyS"
+                                className="text-white-pure leading-relaxed line-clamp-6"
+                              >
+                                {review.text}
+                              </Typography>
+                            </div>
 
-                          {/* Информация об авторе */}
-                          <div className="space-y-1">
-                            <Typography
-                              variant="bodyS"
-                              className="text-white-pure font-semibold line-clamp-1"
-                            >
-                              {review.name}
-                            </Typography>
-                            <Typography
-                              variant="bodyS"
-                              className="text-white-pure italic line-clamp-1"
-                            >
-                              {review.position}
-                            </Typography>
+                            {/* Информация об авторе */}
+                            <div className="space-y-1">
+                              <Typography
+                                variant="bodyS"
+                                className="text-white-pure font-semibold line-clamp-1"
+                              >
+                                {review.name}
+                              </Typography>
+                              <Typography
+                                variant="bodyS"
+                                className="text-white-pure italic line-clamp-1"
+                              >
+                                {review.position}
+                              </Typography>
+                            </div>
                           </div>
                         </div>
                       </CarouselItem>
@@ -217,7 +224,7 @@ export const Reviews = () => {
                     {videoReviewsData.map((review) => (
                       <CarouselItem
                         key={review.id}
-                        className="pl-2 md:pl-4 md:basis-1/3 lg:basis-1/5 mt-20"
+                        className="pl-2 md:pl-4 basis-1/2 md:basis-1/3 lg:basis-1/5 mt-20"
                       >
                         <div className="relative rounded-4xl flex flex-col bg-grey-soft/15 overflow-hidden border border-grey-soft/15 cursor-pointer group">
                           {review.avatar && (
@@ -262,14 +269,6 @@ export const Reviews = () => {
                     <CarouselNext className="static translate-y-0 bg-transparent border-text-muted hover:bg-[rgba(202,202,202,0.15)] text-white-pure rounded-full w-16 h-16" />
                   </div>
                 </Carousel>
-              </div>
-            </TabsContent>
-
-            <TabsContent value="video-reviews" className="mt-10">
-              <div className="text-center py-20">
-                <Typography variant="bodyL" className="text-white-pure">
-                  Видеоотзывы будут добавлены позже
-                </Typography>
               </div>
             </TabsContent>
           </Tabs>

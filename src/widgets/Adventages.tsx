@@ -2,16 +2,13 @@
 
 import { motion } from 'framer-motion'
 import { Typography, useScreenSize } from '../shared'
+import clsx from 'clsx'
 
 interface Advantage {
   id: number
   text: string
   highlightedText: string
   position: {
-    top: string
-    left: string
-  }
-  mobilePosition: {
     top: string
     left: string
   }
@@ -27,10 +24,6 @@ const advantagesData: Advantage[] = [
       top: '0',
       left: '0',
     },
-    mobilePosition: {
-      top: '0',
-      left: '0',
-    },
     zIndex: 4,
   },
   {
@@ -40,10 +33,6 @@ const advantagesData: Advantage[] = [
     position: {
       top: '48px',
       left: '328px',
-    },
-    mobilePosition: {
-      top: '118px',
-      left: '0',
     },
     zIndex: 3,
   },
@@ -55,10 +44,6 @@ const advantagesData: Advantage[] = [
       top: '103px',
       left: '143px',
     },
-    mobilePosition: {
-      top: '203px',
-      left: '0',
-    },
     zIndex: 2,
   },
   {
@@ -69,10 +54,6 @@ const advantagesData: Advantage[] = [
       top: '158px',
       left: '723px',
     },
-    mobilePosition: {
-      top: '358px',
-      left: '0',
-    },
     zIndex: 1,
   },
 ]
@@ -82,7 +63,9 @@ export const Adventages = () => {
   return (
     <section className="bg-bg-surface py-20 relative border-b border-dark-deep">
       <div className="container mx-auto">
-        <div className="relative md:h-[240px] h-[420px]">
+        <div className={clsx(
+          "relative md:h-[240px] flex flex-col gap-4",
+        )}>
           {advantagesData.map((advantage, index) => (
             <motion.div
               key={advantage.id}
@@ -102,10 +85,13 @@ export const Adventages = () => {
                 delay: index * 0.4,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="absolute backdrop-blur-[15px] bg-[rgba(202,202,202,0.15)] flex items-center justify-center rounded-full px-8 py-4"
+              className={clsx(
+                "w-full md:w-auto backdrop-blur-[15px] bg-[rgba(202,202,202,0.15)] items-center justify-center rounded-full px-8 py-4",
+                md ? 'absolute' : 'static',
+              )}
               style={{
-                top: md ? advantage.position.top : advantage.mobilePosition.top,
-                left: md ? advantage.position.left : advantage.mobilePosition.left,
+                top: md ? advantage.position.top : 'initial',
+                left: md ? advantage.position.left : 'initial',
                 zIndex: advantage.zIndex,
               }}
             >

@@ -7,7 +7,7 @@ export default function Contact() {
     <>
       <div className="mb-20 rounded-b-[60px] bg-white-pure pt-20">
         <div className="container flex justify-center">
-          <div className="flex flex-col md:flex-row justify-center gap-6 md:rounded-full md:bg-dark-deep p-4">
+          <div className="flex flex-col md:flex-row justify-center gap-6 md:rounded-full md:bg-bg-surface p-4">
             <a
               href="#"
               className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-6 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"

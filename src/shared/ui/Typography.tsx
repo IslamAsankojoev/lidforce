@@ -17,8 +17,8 @@ const montserrat = Montserrat({
 })
 
 const variantStyles: Record<string, string> = {
-  headingXL: clsx('text-headingXL font-bold', DrukWideCyr.className),
-  headingS: clsx('text-headingS font-bold', DrukWideCyr.className),
+  headingXL: clsx('text-headingXL font-bold leading-none', DrukWideCyr.className),
+  headingS: clsx('text-headingS font-bold leading-none', DrukWideCyr.className),
   bodyL: clsx('text-bodyL font-medium', montserrat.className),
   bodyS: clsx('text-bodyS font-normal', montserrat.className),
   bodyItalic: clsx('text-bodyItalic font-normal italic', montserrat.className),

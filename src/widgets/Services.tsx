@@ -98,7 +98,7 @@ export const Services = () => {
               >
 
                 <div className="flex-1">
-                  <Typography variant="bodyS" className="text-white-pure leading-relaxed">
+                  <Typography variant="bodyS" className="text-white-pure">
                     {service.title.split(' ').map((word, index) => {
                       if (
                         word.includes('Tilda') ||
@@ -129,7 +129,7 @@ export const Services = () => {
                 </div>
 
                 {/* Иконка или декоративный элемент */}
-                <div className="relative flex justify-center items-center w-full h-full">
+                <div className="relative flex justify-center items-center w-full h-[112px]">
                   <Image src={service.image} alt={service.title} objectFit="contain" fill />
                 </div>
               </div>

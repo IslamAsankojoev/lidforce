@@ -8,7 +8,7 @@ import { FAQs, Feedback, NineSteps, Team } from '@/src/widgets'
 export default function About() {
   return (
     <>
-      <div className="mb-20 rounded-[60px] relative w-full min-h-screen">
+      <div className="mb-10 rounded-[60px] relative w-full min-h-screen">
         <Image src="/teamates/team.jpg" alt="About" fill objectFit="cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
         <motion.div
@@ -17,7 +17,7 @@ export default function About() {
           transition={{ duration: 0.5 }}
           className="absolute inset-0 container flex flex-col justify-end pb-20"
         >
-          <Typography variant="headingXL" className="text-white-pure leading-12 mb-6">
+          <Typography variant="headingXL" className="text-white-pure leading-none mb-6">
             Одна команда <br /> для решения всех задач
           </Typography>
           <Typography variant="bodyL" className="text-white-pure">
@@ -26,8 +26,8 @@ export default function About() {
           </Typography>
         </motion.div>
       </div>
-      <div className="container">
-        <div className="flex flex-col md:flex-row gap-10 p-10 items-center">
+      <div className="container pb-10">
+        <div className="flex flex-col md:flex-row gap-10 py-10 md:p-10 items-center">
           <div className="flex flex-col items-center">
             <Logo color={colors['accent-primary']} size={98} />
             <Typography variant="bodyL" className="text-accent-primary">

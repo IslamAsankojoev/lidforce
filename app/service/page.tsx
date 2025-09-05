@@ -225,6 +225,11 @@ export default function Service() {
           </div>
         </div>
       </div>
+      <div className="bg-bg-surface py-20">
+        <div className="container">
+          
+        </div>
+      </div>
       <div className="bg-white-pure py-20">
         <div className="container mx-auto px-4">
           <div className="flex flex-col gap-10">
@@ -244,17 +249,11 @@ export default function Service() {
                 >
                   <div className="flex flex-col gap-4">
                     <div className="bg-white-pure md:w-[60px] md:h-[60px] w-[40px] h-[40px] rounded-[60px] flex items-center justify-center">
-                      <Typography
-                        variant="headingS"
-                        className="text-bg-surface"
-                      >
+                      <Typography variant="headingS" className="text-bg-surface">
                         {approach.id}
                       </Typography>
                     </div>
-                    <Typography
-                      variant="bodyL"
-                      className="text-white-pure leading-[1.3]"
-                    >
+                    <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
                       {approach.title}
                     </Typography>
                   </div>

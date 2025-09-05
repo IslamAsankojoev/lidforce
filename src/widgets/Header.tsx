@@ -2,9 +2,10 @@
 
 import { useState } from 'react'
 import { Menu, X } from 'lucide-react'
-import { Sheet, SheetContent, SheetTrigger } from '@/src/shadcn/components/ui/sheet'
+import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/src/shadcn/components/ui/sheet'
 import { colors, Logo, routes } from '@/src/shared'
 import { usePathname } from 'next/navigation'
+import clsx from 'clsx'
 
 export const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -14,13 +15,18 @@ export const Header = () => {
   return (
     <header className="w-full fixed top-0 z-50">
       <div className="container mx-auto px-0 md:px-4">
-        <div className="bg-grey-soft/15 backdrop-blur-md md:rounded-full h-16 md:h-20 flex items-center justify-between px-6 sm:px-8 lg:px-10">
+        <div
+          className={clsx(
+            'backdrop-blur-md md:rounded-full h-16 md:h-20 flex items-center justify-between px-6 sm:px-8 lg:px-10',
+            'bg-grey-soft/15',
+          )}
+        >
           {/* Логотип */}
           <div className="flex-shrink-0">
             <div className="w-12 h-12 relative overflow-hidden">
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="w-5 h-11 rounded-full flex items-center justify-center relative">
-                  <Logo color={isContact ? colors['grey-soft'] : colors['white-pure']} />
+                  <Logo color={isContact ? colors['bg-surface'] : colors['white-pure']} />
                 </div>
               </div>
             </div>
@@ -35,9 +41,7 @@ export const Header = () => {
                 className={`font-medium text-lg px-3 py-3 transition-colors duration-200 ${
                   isActive(item.href)
                     ? 'text-accent-primary border-b border-accent-primary'
-                    : `${
-                        isContact ? 'text-grey-soft' : 'text-white-pure'
-                      } hover:text-accent-primary`
+                    : `${isContact ? 'text-bg-surface' : 'text-white-pure'} hover:text-accent-primary`
                 }`}
               >
                 {item.name}
@@ -67,27 +71,14 @@ export const Header = () => {
             <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
               <SheetTrigger asChild>
                 <button className="text-white-pure hover:text-accent-primary transition-colors duration-200 cursor-pointer">
-                  <Menu className="w-6 h-6" />
+                  <Menu className="w-6 h-6" color={isContact ? colors['bg-surface'] : colors['white-pure']} />
                 </button>
               </SheetTrigger>
               <SheetContent
                 side="right"
-                className="bg-bg-surface border-l border-[rgba(202,202,202,0.15)] w-[280px] px-4"
+                className="bg-dark-deep/25 backdrop-blur-md border-0 w-[280px] px-4 "
               >
-                <div className="flex flex-col h-full">
-                  {/* Заголовок мобильного меню */}
-                  <div className="flex items-center justify-between mb-8">
-                    <div className="w-5 h-11 rounded-full flex items-center justify-center relative mt-4">
-                      <Logo />
-                    </div>
-                    <button
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="text-white-pure hover:text-accent-primary transition-colors duration-200"
-                    >
-                      <X className="w-6 h-6" />
-                    </button>
-                  </div>
-
+                <div className="flex flex-col h-full pt-12">
                   {/* Мобильная навигация */}
                   <nav className="flex flex-col space-y-4">
                     {routes.map((item) => (
