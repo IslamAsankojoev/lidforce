@@ -59,7 +59,7 @@ const advantagesData: Advantage[] = [
 ]
 
 export const Adventages = () => {
-  const { md, lg } = useScreenSize()
+  const { md } = useScreenSize()
   return (
     <section className="bg-bg-surface py-20 relative border-b border-dark-deep">
       <div className="container mx-auto">

@@ -1,42 +1,31 @@
 'use client'
 
-import clsx from 'clsx'
+import Image from 'next/image'
 import { colors, Instagram, Logo, routes, Telegram, Typography, WhatsApp } from '../shared'
 import { Mail } from 'lucide-react'
 
 export const Footer = () => {
-  const windowWidth = typeof window === 'undefined' ? 1024 : window.innerWidth
   return (
     <>
-      <footer className='relative rounded-4xl hidden sm:block'>
-        <svg
-          width={windowWidth > 1024 ? '1980' : '100%'}
-          height={339}
-          viewBox="0 0 1980 339"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-full h-full bottom-0 left-0"
-        >
-          <path
-            d="M990 0C995.225 0 1000.25 0.852587 1004.95 2.42622C1032.65 11.7139 1057.68 39 1086.9 39H1920C1953.14 39 1980 65.8629 1980 99V279C1980 312.137 1953.14 339 1920 339H59.9999C26.8629 339 0 312.137 0 279V99C0 65.8629 26.8629 39 60 39H893.095C922.319 39 947.346 11.7139 975.055 2.42622C979.75 0.852586 984.775 0 990 0Z"
-            fill="#FDFEFF"
-          />
-        </svg>
-        <div className="container absolute bottom-0 left-1/2 -translate-x-1/2 p-20">
-          <div className="flex justify-center gap-10">
+      <footer className="relative rounded-4xl bg-white-pure">
+        <div className="relative w-40 h-40 invert-100">
+          <Image src="/footer-boob.webp" alt="Footer" fill />
+        </div>
+        <div className="container p-10 md:p-20">
+          <div className="flex justify-center gap-10 md:flex-row flex-col items-center">
             <div className="flex flex-col">
               <Logo color={colors['accent-primary']} size={53} />
               <p className="text-accent-primary text-sm">Lidforce</p>
             </div>
             <div className="flex flex-col gap-10">
-              <div className="flex justify-center gap-6">
+              <div className="flex justify-center gap-6 flex-wrap md:flex-nowrap items-center">
                 {routes.map((item) => (
                   <a key={item.name} href={item.href}>
                     <Typography variant="button">{item.name}</Typography>
                   </a>
                 ))}
               </div>
-              <div className="flex justify-center gap-6">
+              <div className="flex justify-center gap-6 flex-wrap md:flex-nowrap items-center">
                 <a
                   href="#"
                   className="rounded-full bg-accent-primary p-2 flex items-center gap-2 px-6 text-white-pure hover:bg-accent-primary/80 transition-colors duration-200 cursor-pointer font-medium"

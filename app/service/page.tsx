@@ -152,21 +152,19 @@ export default function Service() {
         <div className="container mx-auto px-4 py-40 relative z-10 min-h-screen">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
             {/* Текстовый блок */}
-            <div className="flex flex-col gap-10 w-full lg:w-1/2">
+            <div className="flex flex-col gap-10 w-full">
               <div className="flex flex-col gap-[25px]">
                 <Typography
                   variant="headingXL"
-                  className="text-white-pure text-nowrap leading-none"
+                  className="text-white-pure leading-none max-w-[955px]"
                 >
-                  Услуги
-                  <br />
+                  Услуги{' '}
+                  <br className="" />
                   которые приносят результат
                 </Typography>
                 <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
                   Комплексные маркетинговые решения для роста вашего бизнеса: от стратегии до
-                  запуска рекламы.
-                  <br />
-                  Настраиваем, продвигаем, анализируем — и делаем это с умом.
+                  запуска рекламы. Настраиваем, продвигаем, анализируем — и делаем это с умом.
                 </Typography>
               </div>
 
@@ -186,7 +184,7 @@ export default function Service() {
                 className="-mr-14 z-1"
               >
                 <Image
-                  src="/services/left-line.png"
+                  src="/services/left-line.webp"
                   alt="hero"
                   className="object-contain"
                   width={262}
@@ -200,7 +198,7 @@ export default function Service() {
                 className="z-0"
               >
                 <Image
-                  src="/services/middle-line.png"
+                  src="/services/middle-line.webp"
                   alt="hero"
                   className="object-contain"
                   width={262}
@@ -214,7 +212,7 @@ export default function Service() {
                 className="-ml-28 z-1"
               >
                 <Image
-                  src="/services/right-line.png"
+                  src="/services/right-line.webp"
                   alt="hero"
                   className="object-contain"
                   width={262}
@@ -226,9 +224,7 @@ export default function Service() {
         </div>
       </div>
       <div className="bg-bg-surface py-20">
-        <div className="container">
-          
-        </div>
+        <div className="container"></div>
       </div>
       <div className="bg-white-pure py-20">
         <div className="container mx-auto px-4">

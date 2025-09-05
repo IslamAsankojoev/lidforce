@@ -100,7 +100,7 @@ const videoReviewsData: Review[] = [
 
 export const Reviews = () => {
   return (
-    <section className="bg-bg-surface py-20">
+    <section className="bg-bg-surface py-20 overflow-hidden">
       <div className="container mx-auto">
         <div className="flex flex-col gap-10">
           {/* Табы */}
@@ -108,7 +108,7 @@ export const Reviews = () => {
             <TabsList className="bg-[rgba(202,202,202,0.15)] h-fit rounded-[60px] w-fit relative flex sm:flex">
               <TabsTrigger
                 value="reviews"
-                className="text-white-pure cursor-pointer rounded-[60px] px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
+                className="text-white-pure cursor-pointer rounded-[60px] px-4 md:px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
               >
                 <Typography
                   variant="headingXL"
@@ -119,7 +119,7 @@ export const Reviews = () => {
               </TabsTrigger>
               <TabsTrigger
                 value="video-reviews"
-                className="text-white-pure cursor-pointer rounded-[60px] px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
+                className="text-white-pure cursor-pointer rounded-[60px] px-4 md:px-10 data-[state=active]:bg-white-pure data-[state=active]:text-bg-surface group"
               >
                 <Typography
                   variant="headingXL"

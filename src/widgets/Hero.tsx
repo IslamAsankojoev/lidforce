@@ -32,10 +32,10 @@ export const Hero = () => {
 
   const item = (i: number) => {
     let moveX = 0
-    if (i === 0) moveX = md ? -420 : -200
-    if (i === 1) moveX = md ? -230 : -100
-    if (i === 2) moveX = md ? 230 : 100
-    if (i === 3) moveX = md ? 420 : 200
+    if (i === 0) moveX = md ? -420 : -170 // пешка слева
+    if (i === 1) moveX = md ? -230 : -100 // конь
+    if (i === 2) moveX = md ? 230 : 100 // ладья
+    if (i === 3) moveX = md ? 420 : 170 // пешка справа
 
     return {
       hidden: {
@@ -56,7 +56,7 @@ export const Hero = () => {
   }
 
   return (
-    <section className="relative isolate min-h-screen border-b border-dark-deep overflow-hidden">
+    <section className="relative isolate min-h-screen border-b border-dark-deep overflow-hidden flex flex-col justify-center">
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-20 lg:py-28">
         <motion.h1
           initial={{ opacity: 0, scale: 0.96, y: 400 }}

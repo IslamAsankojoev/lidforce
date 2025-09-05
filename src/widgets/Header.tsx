@@ -1,8 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X } from 'lucide-react'
-import { Sheet, SheetClose, SheetContent, SheetTrigger } from '@/src/shadcn/components/ui/sheet'
+import { Menu } from 'lucide-react'
+import { Sheet, SheetContent, SheetTrigger } from '@/src/shadcn/components/ui/sheet'
 import { colors, Logo, routes } from '@/src/shared'
 import { usePathname } from 'next/navigation'
 import clsx from 'clsx'

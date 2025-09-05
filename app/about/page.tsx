@@ -9,7 +9,7 @@ export default function About() {
   return (
     <>
       <div className="mb-10 rounded-[60px] relative w-full min-h-screen">
-        <Image src="/teamates/team.jpg" alt="About" fill objectFit="cover" />
+        <Image src="/teamates/team.webp" alt="About" fill objectFit="cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
         <motion.div
           initial={{ opacity: 0, y: 100 }}
