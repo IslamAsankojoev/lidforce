@@ -8,8 +8,10 @@ export const Footer = () => {
   return (
     <>
       <footer className="relative rounded-4xl bg-white-pure">
-        <div className="relative w-40 h-40 invert-100">
-          <Image src="/footer-boob.webp" alt="Footer" fill />
+        <div className="absolute top-0 left-1/2 -translate-y-full -translate-x-1/2">
+          <div className="relative w-40 h-14">
+            <Image src="/footer-boob.webp" alt="Footer" fill />
+          </div>
         </div>
         <div className="container p-10 md:p-20">
           <div className="flex justify-center gap-10 md:flex-row flex-col items-center">

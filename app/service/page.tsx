@@ -149,7 +149,7 @@ export default function Service() {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 py-40 relative z-10 min-h-screen">
+        <div className="container mx-auto px-4 py-40 xs:py-20 md:py-40 relative z-10 min-h-screen">
           <div className="flex flex-col lg:flex-row items-start justify-between gap-10">
             {/* Текстовый блок */}
             <div className="flex flex-col gap-10 w-full">
@@ -158,9 +158,7 @@ export default function Service() {
                   variant="headingXL"
                   className="text-white-pure leading-none max-w-[955px]"
                 >
-                  Услуги{' '}
-                  <br className="" />
-                  которые приносят результат
+                  Услуги которые приносят результат
                 </Typography>
                 <Typography variant="bodyL" className="text-white-pure leading-[1.3]">
                   Комплексные маркетинговые решения для роста вашего бизнеса: от стратегии до
