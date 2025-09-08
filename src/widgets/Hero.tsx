@@ -10,14 +10,18 @@ const pieces = [
     alt: 'Пешка слева',
     className: 'w-40 lg:w-50',
     order: 0,
+    delay: 0.8,
+    zIndex: 1,
   },
-  { src: '/chess/knight.webp', alt: 'Конь', className: 'w-60 lg:w-72', order: 1 },
-  { src: '/chess/rook.webp', alt: 'Ладья', className: 'w-60 lg:w-72', order: 3 },
+  { src: '/chess/knight.webp', alt: 'Конь', className: 'w-60 lg:w-72', order: 1, delay: 0.5, zIndex: 2 },
+  { src: '/chess/rook.webp', alt: 'Ладья', className: 'w-60 lg:w-72', order: 3, delay: 0.5, zIndex: 2 },
   {
     src: '/chess/pawn-right.webp',
     alt: 'Пешка справа',
     className: 'w-40 lg:w-50',
     order: 4,
+    delay: 0.8,
+    zIndex: 1,
   },
 ]
 
@@ -92,6 +96,7 @@ export const Hero = () => {
               className="w-96 lg:w-[500px]"
               style={{
                 filter: 'drop-shadow(5px 5px 5px #222)',
+                zIndex: 3,
               }}
             />
             {pieces
@@ -103,8 +108,12 @@ export const Hero = () => {
                   transition={{
                     ease: 'easeOut',
                     duration: 0.5,
+                    delay: p.delay,
                   }}
                   className="absolute bottom-4"
+                  style={{
+                    zIndex: p.zIndex,
+                  }}
                 >
                   <Image src={p.src} alt={p.alt} width={400} height={400} className={p.className} />
                 </motion.div>

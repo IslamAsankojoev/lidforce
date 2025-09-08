@@ -8,7 +8,7 @@ export const Footer = () => {
   return (
     <>
       <footer className="relative rounded-4xl bg-white-pure">
-        <div className="absolute top-0 left-1/2 -translate-y-full -translate-x-1/2">
+        <div className="absolute top-[1px] left-1/2 -translate-y-full -translate-x-1/2">
           <div className="relative w-40 h-14">
             <Image src="/footer-boob.webp" alt="Footer" fill />
           </div>
