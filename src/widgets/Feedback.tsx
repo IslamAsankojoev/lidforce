@@ -28,7 +28,7 @@ interface FeedbackProps {
 }
 
 export const Feedback = ({ title }: FeedbackProps) => {
-  const { register, handleSubmit, setValue, trigger, watch } = useForm<z.infer<typeof schema>>({
+  const { register, handleSubmit, setValue, trigger, watch, reset } = useForm<z.infer<typeof schema>>({
     defaultValues: {
       fullName: '',
       phone: '',
@@ -38,7 +38,33 @@ export const Feedback = ({ title }: FeedbackProps) => {
   })
 
   const onSubmit = handleSubmit((data) => {
-    console.log('Form submitted:', data)
+    const url = 'https://lidforce.bitrix24.ru/rest/39/tonr6bgt8b67m0ab/crm.lead.add.json'
+
+    const body = {
+      fields: {
+        TITLE: 'Лид с сайта lidforce.kg',
+        NAME: data.fullName,
+        PHONE: [{ VALUE: data.phone, VALUE_TYPE: 'MOBILE' }],
+        EMAIL: [{ VALUE: data.email, VALUE_TYPE: 'WORK' }],
+        SOURCE_ID: 'WEB',
+        STATUS_ID: 'NEW',
+        COMMENTS: data.goal.join(', '),
+      },
+    }
+
+    fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(body),
+    })
+      .then((r) => r.json())
+      .then(() => {
+        alert('Заявка отправлена')
+        reset()
+      })
+      .catch(() => {
+        console.error('Ошибка при отправке заявки')
+      })
   })
 
   return (
