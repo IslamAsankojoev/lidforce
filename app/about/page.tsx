@@ -8,7 +8,7 @@ import { FAQs, Feedback, NineSteps, Team } from '@/src/widgets'
 export default function About() {
   return (
     <>
-      <div className="mb-10 rounded-[60px] relative w-full min-h-screen">
+      <div className="mb-10 rounded-[60px] relative w-full h-screen">
         <Image src="/teamates/team.webp" alt="About" fill objectFit="cover" />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
         <motion.div

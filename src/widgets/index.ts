@@ -9,4 +9,5 @@ export * from "./Adventages";
 export * from "./Reviews";
 export * from "./Hero";
 export * from "./Cases";
+export * from "./CasesHero";
 export * from "./NineSteps";

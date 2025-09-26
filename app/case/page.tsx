@@ -1,3 +1,9 @@
+import { CasesHero } from '@/src/widgets'
+
 export default function Case() {
-  return <div>Case</div>
+  return (
+    <div>
+      <CasesHero />
+    </div>
+  )
 }
