@@ -43,7 +43,7 @@ const data = {
 
 export const Nextprotein = () => {
   return (
-    <div className="bg-white-pure flex flex-col gap-20 items-center justify-center pb-20 relative w-full">
+    <div className="bg-white-pure flex flex-col gap-20 items-center justify-center py-20 relative w-full">
       <div className="flex flex-col gap-20 items-start relative shrink-0 w-full">
         {/* Заголовок и информация */}
         <div className="relative shrink-0 w-full">
