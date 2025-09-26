@@ -12,3 +12,4 @@ export * from "./Cases";
 export * from "./CasesHero";
 export * from "./CaseItem";
 export * from "./NineSteps";
+export * from "./case-comps";

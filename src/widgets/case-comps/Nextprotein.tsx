@@ -1,70 +1,49 @@
 import { Typography } from '@/src/shared/ui/Typography'
-import { Divide } from 'lucide-react'
-import { colors } from '../shared'
 import Image from 'next/image'
+import Link from 'next/link'
 
-// Интерфейс для данных кейса
-export interface CaseItemProps {
-  // Основная информация
-  title: string
-  description: string[]
-  logo: string
-
-  // Информация о менеджере
+const data = {
+  title: 'Кейс спортивное питание NeхtProtein',
+  description: [
+    'Оригинальное спортивное питание от лучших брендов США и Европы.',
+    'Прямые поставки, сертифицированная продукция и широкий ассортимент.',
+    'Для тех, кто ценит качество, результат и здоровье.',
+  ],
+  logo: '/fd0b7a7100e3242956b334204c8dc92633c48ced.png',
   manager: {
-    name: string
-    role: string
-  }
-
-  // Ссылки
+    name: 'Эльдияр Азизбеков',
+    role: 'Менеджер кейса',
+  },
   links: {
-    youtube?: string
-    instagram?: string
-  }
-
-  // Теги/категории
+    youtube: 'https://nextprotein1.ps.m...',
+    instagram: 'https://www.instagram.com/...',
+  },
   tags: {
-    services: string[]
-    niches: string[]
-  }
-
-  // Изображения проекта
+    services: ['Таргет', 'Продакшн', 'Брендинг', 'СММ', 'Дизайн'],
+    niches: ['Спортивное питание NeхtProtein'],
+  },
   projectImages: {
-    main: string
-    before: string
-    after: string
-    branding: string[]
-  }
-
-  // Результаты
+    main: '/4750604c542ab686bd7bc3798676c3cc5b6112fe.png',
+    before: '/bbf53f2acb4d39328547d333835f5084c1356e38.png',
+    after: '/7c1c0fcc46a390026ad52ada5b04c6971a02cb3c.png',
+    branding: [],
+  },
   results: {
     pointA: {
-      label: string
-      value: string
-    }
+      label: 'Точка А',
+      value: 'Доход 400 000 сом в месяц',
+    },
     pointB: {
-      label: string
-      value: string
-    }
-  }
-
-  // Дополнительная информация
-  contentCount?: string
+      label: 'Точка B',
+      value: 'Доход 1 000 000 сом в месяц',
+    },
+  },
+  contentCount: 'САМОЕ ПОПУЛЯРНОЕ ВИДЕО НАБРАЛО 6,2 МЛН ПРОСМОТРОВ',
 }
 
-export const CaseItem = ({
-  title,
-  description,
-  logo,
-  manager,
-  links,
-  tags,
-  projectImages,
-  results,
-  contentCount,
-}: CaseItemProps) => {
+export const Nextprotein = () => {
   return (
-    <div className="bg-white-pure flex flex-col gap-20 items-center justify-center py-20 relative w-full">
+    <div className="bg-white-pure flex flex-col gap-20 items-center justify-center pb-20 relative w-full">
       <div className="flex flex-col gap-20 items-start relative shrink-0 w-full">
         {/* Заголовок и информация */}
         <div className="relative shrink-0 w-full">
@@ -72,7 +51,7 @@ export const CaseItem = ({
             {/* Заголовок */}
             <div className="left-0 top-0">
               <Typography variant="headingXL" className="text-bg-surface">
-                {title}
+                {data.title}
               </Typography>
             </div>
             {/* Информация о менеджере и ссылки */}
@@ -83,14 +62,14 @@ export const CaseItem = ({
                   variant="bodyS"
                   className="text-white-pure text-center whitespace-nowrap"
                 >
-                  {manager.role}
+                  {data.manager.role}
                 </Typography>
                 <div className="w-1 h-full bg-white-pure" />
                 <Typography
                   variant="bodyS"
                   className="text-white-pure text-center whitespace-nowrap uppercase"
                 >
-                  {manager.name}
+                  {data.manager.name}
                 </Typography>
               </div>
             </div>
@@ -104,7 +83,7 @@ export const CaseItem = ({
                       Услуга
                     </Typography>
                   </div>
-                  {tags.services.map((service, index) => (
+                  {data.tags.services.map((service, index) => (
                     <div
                       key={index}
                       className="flex gap-[10px] h-[40px] items-center justify-center relative rounded-full border border-dark-deep shrink-0 px-6 py-4"
@@ -123,7 +102,7 @@ export const CaseItem = ({
                       Ниша
                     </Typography>
                   </div>
-                  {tags.niches.map((niche, index) => (
+                  {data.tags.niches.map((niche, index) => (
                     <div
                       key={index}
                       className="flex gap-[10px] h-[40px] items-center justify-center relative rounded-full border border-dark-deep shrink-0 px-6 py-4"
@@ -136,8 +115,8 @@ export const CaseItem = ({
                 </div>
               </div>
               <div className="flex flex-col gap-4 items-end">
-                {links.youtube && (
-                  <div className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0 w-[300px]">
+                {data.links.youtube && (
+                  <Link href={data.links.youtube} target="_blank" rel="noopener noreferrer" className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0 w-[300px]">
                     <Image
                       alt=""
                       width={29.961}
@@ -149,12 +128,12 @@ export const CaseItem = ({
                       variant="bodyS"
                       className="text-accent-primary text-[15px] text-center whitespace-nowrap"
                     >
-                      {links.youtube}
+                      {data.links.youtube}
                     </Typography>
-                  </div>
+                  </Link>
                 )}
-                {links.instagram && (
-                  <div className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0">
+                {data.links.instagram && (
+                  <Link href={data.links.instagram} target="_blank" rel="noopener noreferrer" className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0">
                     <Image
                       alt=""
                       src="/fb0df7e3249c74c6621736f317d9c4157ae5a32a.svg"
@@ -163,13 +142,13 @@ export const CaseItem = ({
                     />
                     <a
                       className="block text-accent-primary text-[15px] text-center whitespace-nowrap cursor-pointer"
-                      href={links.instagram}
+                      href={data.links.instagram}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {links.instagram}
+                      {data.links.instagram}
                     </a>
-                  </div>
+                  </Link>
                 )}
               </div>
             </div>
@@ -189,7 +168,7 @@ export const CaseItem = ({
             </Typography>
             <div className="text-text-muted text-[20px]">
               <ul className="list-disc">
-                {description.map((item, index) => (
+                {data.description.map((item, index) => (
                   <li key={index} className="mb-0 ms-[30px]">
                     <span className="leading-[1.3]">{item}</span>
                   </li>
@@ -202,9 +181,28 @@ export const CaseItem = ({
               <Image
                 alt="Логотип проекта"
                 className="inset-0 max-w-none object-contain object-center pointer-events-none rounded-[30px] w-full h-full"
-                src={logo}
+                src={data.logo}
                 fill
               />
+            </div>
+          </div>
+        </div>
+
+        <div className="flex flex-col w-full">
+          <Typography variant="headingXL" className="text-bg-surface my-10 text-left">
+            Мы увеличили продажи на 150%
+          </Typography>
+
+          <div className="flex items-center justify-end -mt-8">
+            <div className="flex-none rotate-[-2deg]">
+              <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] w-[640.496px] px-10">
+                <Typography
+                  variant="headingS"
+                  className="text-white-pure text-[20px] text-center uppercase"
+                >
+                  + УЗНАВАЕМОСТЬ ЗА 6 МЕСЯЦЕВ
+                </Typography>
+              </div>
             </div>
           </div>
         </div>
@@ -215,12 +213,12 @@ export const CaseItem = ({
           <div className="relative h-[981px] w-full">
             <Image
               alt="Основное изображение проекта"
-              src={projectImages.main}
+              src={data.projectImages.main}
               fill
               objectFit="cover"
               className="absolute rounded-[60px]"
             />
-            {contentCount && (
+            {data.contentCount && (
               <div className="flex items-center justify-center left-1/2 -translate-x-1/2 w-[642.712px]  absolute z-2 bottom-10">
                 <div className="flex-none rotate-[2deg] ">
                   <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] w-[640.496px] px-10">
@@ -228,7 +226,7 @@ export const CaseItem = ({
                       variant="headingS"
                       className="text-white-pure text-[20px] text-center uppercase"
                     >
-                      {contentCount}
+                      {data.contentCount}
                     </Typography>
                   </div>
                 </div>
@@ -241,7 +239,7 @@ export const CaseItem = ({
             <div className="relative w-[580px] h-[512px] rounded-[60px]">
               <Image
                 alt="До"
-                src={projectImages.before}
+                src={data.projectImages.before}
                 fill
                 objectFit="cover"
                 className="absolute rounded-[60px]"
@@ -261,7 +259,7 @@ export const CaseItem = ({
                 fill
                 objectFit="cover"
                 className="absolute rounded-[60px]"
-                src={projectImages.after}
+                src={data.projectImages.after}
               />
               <div className="bg-accent-primary flex gap-[10px] h-[57px] items-center justify-center px-[10px] py-0 rounded-[60px] w-[179px] absolute z-2 bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2">
                 <Typography
@@ -278,7 +276,7 @@ export const CaseItem = ({
         </div>
 
         {/* Брендинг */}
-        {projectImages.branding.length > 0 && (
+        {data.projectImages.branding.length > 0 && (
           <div className="flex flex-col gap-[25px] h-[1044px] items-start relative shrink-0 w-full">
             <Typography
               variant="headingXL"
@@ -288,7 +286,7 @@ export const CaseItem = ({
             </Typography>
             <div className="h-[961px] relative shrink-0 w-full">
               <div className="grid grid-cols-3 gap-[25px] h-full">
-                {projectImages.branding.map((image, index) => (
+                {data.projectImages.branding.map((image, index) => (
                   <div key={index} className="relative rounded-[30px] overflow-hidden">
                     <Image
                       alt={`Брендинг ${index + 1}`}
@@ -320,12 +318,12 @@ export const CaseItem = ({
                   variant="headingS"
                   className="text-dark-deep whitespace-nowrap uppercase text-center"
                 >
-                  {results.pointA.label}
+                  {data.results.pointA.label}
                 </Typography>
               </div>
               <div className="flex-grow">
                 <Typography variant="bodyL" className="text-white-pure px-4 text-center">
-                  {results.pointA.value}
+                  {data.results.pointA.value}
                 </Typography>
               </div>
             </div>
@@ -337,7 +335,7 @@ export const CaseItem = ({
                   variant="bodyL"
                   className="text-white-pure text-[20px] whitespace-nowrap text-center"
                 >
-                  {results.pointB.value}
+                  {data.results.pointB.value}
                 </Typography>
               </div>
               <div className="bg-white-pure flex h-[66px] items-center justify-center rounded-[60px] px-4">
@@ -345,7 +343,7 @@ export const CaseItem = ({
                   variant="headingS"
                   className="text-dark-deep whitespace-nowrap uppercase text-center"
                 >
-                  {results.pointB.label}
+                  {data.results.pointB.label}
                 </Typography>
               </div>
             </div>
