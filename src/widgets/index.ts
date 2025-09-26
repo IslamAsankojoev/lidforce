@@ -10,4 +10,5 @@ export * from "./Reviews";
 export * from "./Hero";
 export * from "./Cases";
 export * from "./CasesHero";
+export * from "./CaseItem";
 export * from "./NineSteps";
