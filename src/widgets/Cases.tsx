@@ -196,14 +196,64 @@ export const Cases = () => {
         </motion.div>
 
         {/* Cases */}
-        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 relative min-h-[600px] rounded-4xl p-10 overflow-hidden border border-dark-deep">
-          <div className="w-[600px] h-[600px] absolute top-0 -translate-x-1/2 -translate-y-1/2 left-0 bg-accent-primary rounded-full z-1 opacity-90 blur-[200px]" />
-          <div className="w-[300px] h-[300px] absolute top-0 translate-x-1/2 -translate-y-1/2 right-0 bg-accent-primary rounded-full z-1 opacity-90 blur-[200px]" />
-          {filteredCases.map((caseItem) => (
-            <div key={caseItem.id} className="relative z-2 w-auto h-[120px]">
-              <Image src={caseItem.image} alt={caseItem.title} fill objectFit="contain" />
+        <div className="relative">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-5 min-h-[600px] p-10 overflow-hidden relative rounded-[60px]">
+            <div
+              className="absolute flex h-[438.65px] items-center justify-center -translate-x-1/2 -translate-y-1/2 w-[461.248px]"
+              style={{ top: 'calc(50% - 201.671px)', left: 'calc(50% - 475.37px)' }}
+            >
+              <div className="flex-none rotate-[332.736deg]">
+                <div className="h-[307.815px] relative w-[360.278px]">
+                  <div className="absolute inset-[-97.46%_-83.27%]">
+                    <Image
+                      alt="Декоративный элемент слева"
+                      fill
+                      objectFit="cover"
+                      className="absolute inset-0"
+                      src="/8b90a531507d497903ada0618ee84c6641cfac5e.svg"
+                    />
+                  </div>
+                </div>
+              </div>
             </div>
-          ))}
+            <div
+              className="absolute flex h-[438.65px] items-center justify-center -translate-x-1/2 -translate-y-1/2 w-[461.248px]"
+              style={{ top: 'calc(50% - 201.671px)', left: 'calc(50% + 486.63px)' }}
+            >
+              <div className="flex-none rotate-[207.264deg] scale-y-[-100%]">
+                <div className="h-[307.815px] relative w-[360.278px]">
+                  <div className="absolute inset-[-97.46%_-83.27%]">
+                    <Image
+                      alt="Декоративный элемент справа"
+                      fill
+                      objectFit="cover"
+                      className="absolute inset-0"
+                      src="/a6985cc3aacc16e796b3f298722e5c6b9af8b497.svg"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+            {filteredCases.map((caseItem) => (
+              <div key={caseItem.id} className="relative z-2 w-auto h-[120px]">
+                <Image src={caseItem.image} alt={caseItem.title} fill objectFit="contain" />
+              </div>
+            ))}
+          </div>
+          <div
+          className="absolute h-[308px] -translate-x-1/2 -translate-y-1/2 w-[1091px]"
+          style={{ top: 'calc(50% + 66px)', left: 'calc(50% - 0.5px)' }}
+        >
+          <div className="absolute inset-[-113.64%_-32.08%]">
+            <Image
+              alt="Декоративный элемент"
+              fill
+              objectFit="cover"
+              className="absolute inset-0"
+              src="/da0e6405f56e0506070068eade171d326a961a6a.svg"
+            />
+          </div>
+        </div>
         </div>
       </div>
     </section>

@@ -55,7 +55,7 @@ export const Nextprotein = () => {
               </Typography>
             </div>
             {/* Информация о менеджере и ссылки */}
-            <div className="flex flex-wrap items-end justify-end mt-10">
+            <div className="flex flex-wrap items-end justify-start md:justify-end mt-10">
               {/* Менеджер кейса */}
               <div className="bg-dark-deep flex gap-[10px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0 w-[379px]">
                 <Typography
@@ -73,11 +73,11 @@ export const Nextprotein = () => {
                 </Typography>
               </div>
             </div>
-            <div className="flex mt-8 justify-between">
+            <div className="flex mt-8 justify-between flex-col md:flex-row gap-4">
               {/* Теги */}
               <div className="flex flex-col gap-[25px] items-start">
                 {/* Услуги */}
-                <div className="flex flex-wrap gap-4 items-start relative shrink-0">
+                <div className="flex flex-wrap gap-4 items-center md:items-start relative shrink-0">
                   <div className="bg-accent-primary flex gap-[10px] h-[40px] items-center justify-center relative rounded-full shrink-0 px-8 py-4">
                     <Typography variant="bodyS" className="text-white-pure whitespace-nowrap">
                       Услуга
@@ -96,7 +96,7 @@ export const Nextprotein = () => {
                 </div>
 
                 {/* Ниши */}
-                <div className="flex flex-wrap gap-4 items-start relative shrink-0">
+                <div className="flex flex-wrap gap-4 items-center md:items-start relative shrink-0">
                   <div className="bg-accent-primary flex gap-[10px] h-[40px] items-center justify-center relative rounded-full shrink-0 px-8 py-4">
                     <Typography variant="bodyS" className="text-white-pure whitespace-nowrap">
                       Ниша
@@ -114,9 +114,14 @@ export const Nextprotein = () => {
                   ))}
                 </div>
               </div>
-              <div className="flex flex-col gap-4 items-end">
+              <div className="flex flex-col gap-4 items-start md:items-end">
                 {data.links.youtube && (
-                  <Link href={data.links.youtube} target="_blank" rel="noopener noreferrer" className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0 w-[300px]">
+                  <Link
+                    href={data.links.youtube}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0 w-[300px]"
+                  >
                     <Image
                       alt=""
                       width={29.961}
@@ -133,7 +138,12 @@ export const Nextprotein = () => {
                   </Link>
                 )}
                 {data.links.instagram && (
-                  <Link href={data.links.instagram} target="_blank" rel="noopener noreferrer" className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0">
+                  <Link
+                    href={data.links.instagram}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-grey-soft/15 flex gap-[10px] h-[40px] items-center justify-center px-4 py-3 relative rounded-[60px] shrink-0"
+                  >
                     <Image
                       alt=""
                       src="/fb0df7e3249c74c6621736f317d9c4157ae5a32a.svg"
@@ -158,8 +168,8 @@ export const Nextprotein = () => {
 
       <div className="flex flex-col gap-10 items-center justify-center relative shrink-0 w-full container px-4 md:px-0">
         {/* О проекте */}
-        <div className="flex items-center justify-between relative shrink-0 w-full">
-          <div className="flex flex-col gap-[25px] h-[151px] items-start relative shrink-0">
+        <div className="flex items-center justify-between relative shrink-0 w-full flex-col md:flex-row gap-4">
+          <div className="flex flex-col gap-[25px] items-start relative shrink-0">
             <Typography
               variant="headingXL"
               className="text-bg-surface text-[45px] leading-normal whitespace-pre"
@@ -188,14 +198,14 @@ export const Nextprotein = () => {
           </div>
         </div>
 
-        <div className="flex flex-col w-full">
+        <div className="flex flex-col gap-6 w-full">
           <Typography variant="headingXL" className="text-bg-surface my-10 text-left">
             Мы увеличили продажи на 150%
           </Typography>
 
           <div className="flex items-center justify-end -mt-8">
             <div className="flex-none rotate-[-2deg]">
-              <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] w-[640.496px] px-10">
+              <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] md:w-[640.496px] w-[400px] px-10">
                 <Typography
                   variant="headingS"
                   className="text-white-pure text-[20px] text-center uppercase"
@@ -208,9 +218,9 @@ export const Nextprotein = () => {
         </div>
 
         {/* Изображения проекта */}
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col gap-6 w-full">
           {/* Основное изображение */}
-          <div className="relative h-[981px] w-full">
+          <div className="relative md:h-[981px] h-[512px] w-full">
             <Image
               alt="Основное изображение проекта"
               src={data.projectImages.main}
@@ -219,9 +229,9 @@ export const Nextprotein = () => {
               className="absolute rounded-[60px]"
             />
             {data.contentCount && (
-              <div className="flex items-center justify-center left-1/2 -translate-x-1/2 w-[642.712px]  absolute z-2 bottom-10">
-                <div className="flex-none rotate-[2deg] ">
-                  <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] w-[640.496px] px-10">
+              <div className="flex items-center justify-center left-1/2 -translate-x-1/2 md:w-[642.712px] w-[300px] absolute z-2 bottom-10">
+                <div className="flex-none rotate-[2deg]">
+                  <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] md:w-[640.496px] w-[500px] px-10">
                     <Typography
                       variant="headingS"
                       className="text-white-pure text-[20px] text-center uppercase"
@@ -235,14 +245,14 @@ export const Nextprotein = () => {
           </div>
 
           {/* Кнопки До/После */}
-          <div className="flex gap-6">
-            <div className="relative w-[580px] h-[512px] rounded-[60px]">
+          <div className="flex md:gap-6 flex-col md:flex-row gap-10 w-full">
+            <div className="relative w-full h-[512px] rounded-[60px]">
               <Image
                 alt="До"
                 src={data.projectImages.before}
                 fill
                 objectFit="cover"
-                className="absolute rounded-[60px]"
+                className="rounded-[60px]"
               />
               <div className="bg-accent-primary flex gap-[10px] h-[57px] items-center justify-center px-[10px] py-0 rounded-[60px] w-[179px] absolute z-2 bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
                 <Typography
@@ -253,12 +263,12 @@ export const Nextprotein = () => {
                 </Typography>
               </div>
             </div>
-            <div className="relative w-[580px] h-[512px] rounded-[60px]">
+            <div className="relative w-full h-[512px] rounded-[60px]">
               <Image
                 alt="После"
                 fill
                 objectFit="cover"
-                className="absolute rounded-[60px]"
+                className="rounded-[60px]"
                 src={data.projectImages.after}
               />
               <div className="bg-accent-primary flex gap-[10px] h-[57px] items-center justify-center px-[10px] py-0 rounded-[60px] w-[179px] absolute z-2 bottom-0 left-1/2 translate-y-1/2 -translate-x-1/2">
@@ -284,8 +294,8 @@ export const Nextprotein = () => {
             >
               Брендинг
             </Typography>
-            <div className="h-[961px] relative shrink-0 w-full">
-              <div className="grid grid-cols-3 gap-[25px] h-full">
+            <div className="relative shrink-0 w-full">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-[25px] h-full">
                 {data.projectImages.branding.map((image, index) => (
                   <div key={index} className="relative rounded-[30px] overflow-hidden">
                     <Image
@@ -303,21 +313,15 @@ export const Nextprotein = () => {
         )}
 
         {/* Результат */}
-        <div className="flex flex-col gap-[25px] h-[159px] items-start relative shrink-0 w-full">
-          <Typography
-            variant="headingXL"
-            className="text-bg-surface text-[48px] leading-[1.2] w-[1181px]"
-          >
+        <div className="flex flex-col gap-[25px] items-start relative shrink-0 w-full">
+          <Typography variant="headingXL" className="text-bg-surface text-[48px] leading-[1.2]">
             Результат
           </Typography>
-          <div className="flex gap-5 items-start relative shrink-0 w-full">
+          <div className="flex gap-5 items-start relative shrink-0 w-full flex-col md:flex-row">
             {/* Точка А */}
             <div className="bg-red-alert relative rounded-full shrink-0 flex p-[5px] items-center flex-grow">
               <div className="bg-white-pure flex h-[66px] items-center justify-center rounded-[60px] px-4">
-                <Typography
-                  variant="headingS"
-                  className="text-dark-deep whitespace-nowrap uppercase text-center"
-                >
+                <Typography variant="headingS" className="text-dark-deep uppercase text-center">
                   {data.results.pointA.label}
                 </Typography>
               </div>
@@ -331,18 +335,12 @@ export const Nextprotein = () => {
             {/* Точка B */}
             <div className="bg-green-success relative rounded-full shrink-0 flex p-[5px] items-center flex-grow justify-between">
               <div className="flex-grow">
-                <Typography
-                  variant="bodyL"
-                  className="text-white-pure text-[20px] whitespace-nowrap text-center"
-                >
+                <Typography variant="bodyL" className="text-white-pure text-[20px] text-center">
                   {data.results.pointB.value}
                 </Typography>
               </div>
               <div className="bg-white-pure flex h-[66px] items-center justify-center rounded-[60px] px-4">
-                <Typography
-                  variant="headingS"
-                  className="text-dark-deep whitespace-nowrap uppercase text-center"
-                >
+                <Typography variant="headingS" className="text-dark-deep uppercase text-center">
                   {data.results.pointB.label}
                 </Typography>
               </div>
@@ -351,7 +349,7 @@ export const Nextprotein = () => {
         </div>
 
         {/* Кнопка "Читать полностью" */}
-        <div className="inline-grid grid-cols-[max-content] grid-rows-[max-content] place-items-start relative shrink-0">
+        <div className="inline-grid relative shrink-0">
           <div className="[grid-area:1_/_1] h-[63px] ml-0 mt-0 relative w-[356px]">
             <Image
               alt=""

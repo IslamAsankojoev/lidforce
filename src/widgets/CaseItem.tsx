@@ -1,6 +1,4 @@
 import { Typography } from '@/src/shared/ui/Typography'
-import { Divide } from 'lucide-react'
-import { colors } from '../shared'
 import Image from 'next/image'
 
 // Интерфейс для данных кейса
