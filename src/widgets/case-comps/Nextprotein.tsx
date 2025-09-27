@@ -349,7 +349,7 @@ export const Nextprotein = () => {
         </div>
 
         {/* Кнопка "Читать полностью" */}
-        <div className="inline-grid relative shrink-0">
+        <Link href={`/case/nextprotein`} className="inline-grid relative shrink-0 cursor-pointer">
           <div className="[grid-area:1_/_1] h-[63px] ml-0 mt-0 relative w-[356px]">
             <Image
               alt=""
@@ -371,7 +371,7 @@ export const Nextprotein = () => {
               objectFit="contain"
             />
           </div>
-        </div>
+        </Link>
       </div>
     </div>
   )
