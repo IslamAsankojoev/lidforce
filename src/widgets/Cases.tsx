@@ -154,7 +154,7 @@ export const Cases = () => {
   const filteredCases = cases.filter((caseItem) => caseItem.categories.includes(activeCategory))
 
   return (
-    <section className="bg-bg-surface py-20">
+    <section className="bg-bg-surface py-20 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-16">

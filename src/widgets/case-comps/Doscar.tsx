@@ -218,7 +218,7 @@ export const Doscar = () => {
             {data.contentCount && (
               <div className="flex items-center justify-center left-1/2 -translate-x-1/2 md:w-[642.712px] w-[300px] absolute z-2 bottom-10">
                 <div className="flex-none rotate-[2deg]">
-                  <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] md:w-[640.496px] w-[500px] px-10">
+                  <div className="bg-accent-primary flex gap-[10px] h-[75px] items-center justify-center py-0 relative rounded-[60px] md:w-[640.496px] w-[400px] px-10">
                     <Typography
                       variant="headingS"
                       className="text-white-pure text-[20px] text-center uppercase"
