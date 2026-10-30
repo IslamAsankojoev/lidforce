@@ -1,7 +1,7 @@
 'use client'
 
 import { motion } from 'motion/react'
-import { Typography, useScreenSize } from '../shared'
+import { Typography } from '../shared'
 import clsx from 'clsx'
 
 interface Advantage {
@@ -59,7 +59,6 @@ const advantagesData: Advantage[] = [
 ]
 
 export const Adventages = () => {
-  const { md } = useScreenSize()
   return (
     <section className="bg-bg-surface py-20 relative border-b border-dark-deep">
       <div className="container mx-auto">
@@ -87,13 +86,13 @@ export const Adventages = () => {
               }}
               className={clsx(
                 "w-full md:w-auto backdrop-blur-[15px] bg-[rgba(202,202,202,0.15)] items-center justify-center rounded-full px-8 py-4",
-                md ? 'absolute' : 'static',
+                'md:absolute md:top-[var(--top)] md:left-[var(--left)]',
               )}
               style={{
-                top: md ? advantage.position.top : 'initial',
-                left: md ? advantage.position.left : 'initial',
+                '--top': advantage.position.top,
+                '--left': advantage.position.left,
                 zIndex: advantage.zIndex,
-              }}
+              } as React.CSSProperties}
             >
               <Typography variant="bodyL" className="text-white-pure text-center">
                 {advantage.text.split(advantage.highlightedText).map((part, index) => (
