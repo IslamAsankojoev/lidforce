@@ -1,5 +1,3 @@
-'use client'
-
 import { Typography } from '../shared/ui/Typography'
 
 interface StepCardProps {

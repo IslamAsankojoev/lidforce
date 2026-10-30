@@ -1,5 +1,3 @@
-'use client'
-
 import { colors, Typography } from '../shared'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '../shadcn/components/ui/tabs'
 import {

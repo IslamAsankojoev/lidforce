@@ -1,5 +1,3 @@
-'use client'
-
 import { FC, HTMLProps } from 'react'
 
 import clsx from 'clsx'

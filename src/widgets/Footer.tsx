@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import { colors, Instagram, Logo, routes, Telegram, Typography, WhatsApp } from '../shared'
 import { Mail } from 'lucide-react'

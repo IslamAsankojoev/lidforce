@@ -1,5 +1,3 @@
-'use client'
-
 import { colors, Typography } from '../shared'
 import Image from 'next/image'
 import {
