@@ -47,8 +47,8 @@
 
 ## Задача 0. Подготовка и скрипт замера [простая]
 
-- [ ] Выполни `npm ci` и `npm run build`, убедись, что сборка проходит.
-- [ ] Создай `scripts/measure-pages.mjs`:
+- [x] Выполни `npm ci` и `npm run build`, убедись, что сборка проходит.
+- [x] Создай `scripts/measure-pages.mjs`:
 
 ```js
 // Вес картинок на каждой странице. Запускать после `npm run build`.
@@ -70,14 +70,14 @@ for (const page of pages) {
 }
 ```
 
-- [ ] Выполни `node scripts/measure-pages.mjs`. Цифры должны примерно совпасть с колонкой «Было».
+- [x] Выполни `node scripts/measure-pages.mjs`. Цифры должны примерно совпасть с колонкой «Было».
 - Коммит: `chore: add page weight measurement script`
 
 ## Задача 1. Удалить неиспользуемые файлы из `public/` [простая]
 
 В `public/` лежат 118 файлов (7,8 МБ), на которые нигде нет ссылок, в том числе PNG на 6 МБ и стандартные SVG от create-next-app.
 
-- [ ] Создай `scripts/find-unused-assets.mjs`:
+- [x] Создай `scripts/find-unused-assets.mjs`:
 
 ```js
 // Печатает файлы из public/, на которые нет ссылок в app/ и src/.
@@ -108,33 +108,33 @@ for (const file of walk('public')) {
 console.log(`TOTAL ${(total / 1024 / 1024).toFixed(1)} MB`)
 ```
 
-- [ ] Выполни `node scripts/find-unused-assets.mjs`. Ожидается 118 файлов и `TOTAL 7.8 MB`. Если цифры сильно отличаются, остановись и запиши в «Журнал».
-- [ ] Удали эти файлы:
+- [x] Выполни `node scripts/find-unused-assets.mjs`. Ожидается 118 файлов и `TOTAL 7.8 MB`. Если цифры сильно отличаются, остановись и запиши в «Журнал».
+- [x] Удали эти файлы:
 
 ```bash
 node scripts/find-unused-assets.mjs | grep "KB  public" | awk '{print $3}' | xargs rm
 ```
 
-- [ ] `npm run build`, затем `node scripts/measure-pages.mjs`. В выводе не должно быть строк «нет файла».
+- [x] `npm run build`, затем `node scripts/measure-pages.mjs`. В выводе не должно быть строк «нет файла».
 - Коммит: `chore: remove unused assets from public`
 
 ## Задача 2. Удалить мусор из `src/shared/icons/` [простая]
 
 Там 72 файла с именами-хешами (`*.svg`, `*.png`, всего 16 МБ). Их никто не импортирует, используются только `*.tsx` и `index.ts`.
 
-- [ ] Проверь, что импортов нет. Команда должна ничего не вывести:
+- [x] Проверь, что импортов нет. Команда должна ничего не вывести:
 
 ```bash
 grep -rnE "icons/[0-9a-f]{40}" app src --include='*.ts' --include='*.tsx' --include='*.css'
 ```
 
-- [ ] Удали файлы:
+- [x] Удали файлы:
 
 ```bash
 find src/shared/icons -type f -regex '.*/[0-9a-f]\{40\}\.\(svg\|png\)' -delete
 ```
 
-- [ ] В `src/shared/icons/` должны остаться только `*.tsx` и `index.ts`. Выполни `npm run build`.
+- [x] В `src/shared/icons/` должны остаться только `*.tsx` и `index.ts`. Выполни `npm run build`.
 - Коммит: `chore: remove unused icon exports from src/shared/icons`
 
 ## Задача 3. Удалить мёртвый код и зависимости [простая]
@@ -150,12 +150,12 @@ find src/shared/icons -type f -regex '.*/[0-9a-f]\{40\}\.\(svg\|png\)' -delete
 
 Шаги:
 
-- [ ] Удали `tailwind.config.ts`, `test-colors.tsx`, `src/shared/constants/colors.css`, `src/widgets/CaseItem.tsx`.
-- [ ] В `src/widgets/index.ts` удали строку `export * from "./CaseItem";`.
-- [ ] В `src/shared/constants/fonts.ts` удали весь блок `export const DurkCyr = localFont({...})`. Затем удали папку `public/fonts/DrukCyr/`.
-- [ ] Выполни `npm uninstall zod @hookform/resolvers`.
-- [ ] Проверь, что команда ничего не выводит: `grep -rn "DurkCyr\|CaseItem\|from 'zod'\|colors.css" app src`
-- [ ] `npm run build`
+- [x] Удали `tailwind.config.ts`, `test-colors.tsx`, `src/shared/constants/colors.css`, `src/widgets/CaseItem.tsx`.
+- [x] В `src/widgets/index.ts` удали строку `export * from "./CaseItem";`.
+- [x] В `src/shared/constants/fonts.ts` удали весь блок `export const DurkCyr = localFont({...})`. Затем удали папку `public/fonts/DrukCyr/`.
+- [x] Выполни `npm uninstall zod @hookform/resolvers`.
+- [x] Проверь, что команда ничего не выводит: `grep -rn "DurkCyr\|CaseItem\|from 'zod'\|colors.css" app src`
+- [x] `npm run build`
 - Коммит: `chore: remove dead code and unused dependencies`
 
 ## Задача 4. Перевести картинки в WebP [простая]
@@ -167,7 +167,7 @@ find src/shared/icons -type f -regex '.*/[0-9a-f]\{40\}\.\(svg\|png\)' -delete
 - меняет пути в `app/` и `src/`;
 - удаляет исходник.
 
-- [ ] Создай `scripts/optimize-images.mjs`. `sharp` уже установлен вместе с Next. Если его нет, выполни `npm i -D sharp`.
+- [x] Создай `scripts/optimize-images.mjs`. `sharp` уже установлен вместе с Next. Если его нет, выполни `npm i -D sharp`.
 
 ```js
 // Конвертирует PNG/JPG из public/ в WebP, ограничивает ширину, переписывает ссылки в app/ и src/
@@ -236,16 +236,16 @@ for (const file of walk('public').filter((f) => /\.(png|jpe?g)$/i.test(f))) {
 console.log(`\nИТОГО ${kb(before)} -> ${kb(after)}${WRITE ? '' : ' (пробный прогон, ничего не изменено)'}`)
 ```
 
-- [ ] Сделай пробный прогон: `node scripts/optimize-images.mjs`. Ожидается примерно `ИТОГО 33694 KB -> 2407 KB`. Строк `ПРОПУСК` быть не должно.
-- [ ] Примени: `node scripts/optimize-images.mjs --write`.
-- [ ] Проверь, что в коде не осталось ссылок на PNG/JPG из `public/`. Команда должна ничего не вывести:
+- [x] Сделай пробный прогон: `node scripts/optimize-images.mjs`. Ожидается примерно `ИТОГО 33694 KB -> 2407 KB`. Строк `ПРОПУСК` быть не должно.
+- [x] Примени: `node scripts/optimize-images.mjs --write`.
+- [x] Проверь, что в коде не осталось ссылок на PNG/JPG из `public/`. Команда должна ничего не вывести:
 
 ```bash
 grep -rnE "['\"]/[^'\"]+\.(png|jpe?g)['\"]" app src
 ```
 
-- [ ] `npm run build`, затем `node scripts/measure-pages.mjs`: главная около 1 200 КБ, строк «нет файла» нет.
-- [ ] Визуальная проверка: `npm run dev`, открой все 6 страниц (порт 3003). Картинки должны быть на месте и не размыты. Если какая-то размыта, добавь её в `WIDTH_OVERRIDES` с большей шириной **или** верни оригинал через `git checkout` и опиши в «Журнале».
+- [x] `npm run build`, затем `node scripts/measure-pages.mjs`: главная около 1 200 КБ, строк «нет файла» нет.
+- [x] Визуальная проверка: `npm run dev`, открой все 6 страниц (порт 3003). Картинки должны быть на месте и не размыты. Если какая-то размыта, добавь её в `WIDTH_OVERRIDES` с большей шириной **или** верни оригинал через `git checkout` и опиши в «Журнале».
 - Коммит: `perf: convert images to webp and cap their size`
 
 ## Задача 5. Шрифты [простая]
@@ -258,7 +258,7 @@ grep -rnE "['\"]/[^'\"]+\.(png|jpe?g)['\"]" app src
 
 После задачи останется около 143 КБ.
 
-- [ ] **Montserrat** в `src/shared/ui/Typography.tsx`: убери массив `weight` (без него Next подключит вариативный шрифт, это один файл на все начертания) и оставь два набора символов:
+- [x] **Montserrat** в `src/shared/ui/Typography.tsx`: убери массив `weight` (без него Next подключит вариативный шрифт, это один файл на все начертания) и оставь два набора символов:
 
 ```ts
 const montserrat = Montserrat({
@@ -267,7 +267,7 @@ const montserrat = Montserrat({
 })
 ```
 
-- [ ] **DrukWideCyr: OTF → WOFF2.** Используй временное окружение вне репозитория:
+- [x] **DrukWideCyr: OTF → WOFF2.** Используй временное окружение вне репозитория:
 
 ```bash
 python3 -m venv /tmp/fontenv && /tmp/fontenv/bin/pip -q install fonttools brotli
@@ -276,29 +276,29 @@ python3 -m venv /tmp/fontenv && /tmp/fontenv/bin/pip -q install fonttools brotli
 
   Должен получиться файл около 57 КБ. Удали `.otf`. В `src/shared/constants/fonts.ts` поменяй путь на `.woff2`, исправь `style: 'bold'` на `style: 'normal'` (`bold` — недопустимое значение font-style, браузер его и так игнорирует) и добавь `display: 'swap'`.
 
-- [ ] **Geist Mono** в `app/layout.tsx`:
+- [x] **Geist Mono** в `app/layout.tsx`:
   - убери импорт `Geist_Mono`, константу `geistMono` и `${geistMono.variable}` из `className`;
   - в `app/globals.css` удали строку `--font-mono: var(--font-geist-mono);`.
-- [ ] `npm run build`. Проверь, что в `out/index.html` 4 ссылки `rel="preload"` на шрифты: `grep -o 'as="font"' out/index.html | wc -l`.
-- [ ] Визуальная проверка: заголовки (DrukWideCyr) и текст (Montserrat) выглядят как раньше.
+- [x] `npm run build`. Проверь, что в `out/index.html` 4 ссылки `rel="preload"` на шрифты: `grep -o 'as="font"' out/index.html | wc -l`.
+- [x] Визуальная проверка: заголовки (DrukWideCyr) и текст (Montserrat) выглядят как раньше.
 - Коммит: `perf: slim down font loading`
 
 ## Задача 6. Единый импорт `motion` [простая]
 
 В 7 файлах `motion` импортируется из `framer-motion`, но этого пакета нет в `package.json`: он подтягивается транзитивно через `motion`. Нужно импортировать из `motion/react`, как в `CircularText.tsx`.
 
-- [ ] В файлах `app/about/page.tsx`, `app/service/page.tsx`, `src/widgets/Hero.tsx`, `src/widgets/FAQs.tsx`, `src/widgets/CasesHero.tsx`, `src/widgets/Adventages.tsx`, `src/widgets/Cases.tsx` замени `from 'framer-motion'` на `from 'motion/react'`.
-- [ ] Проверь, что команда ничего не выводит: `grep -rn "framer-motion" app src`
-- [ ] `npm run build`
+- [x] В файлах `app/about/page.tsx`, `app/service/page.tsx`, `src/widgets/Hero.tsx`, `src/widgets/FAQs.tsx`, `src/widgets/CasesHero.tsx`, `src/widgets/Adventages.tsx`, `src/widgets/Cases.tsx` замени `from 'framer-motion'` на `from 'motion/react'`.
+- [x] Проверь, что команда ничего не выводит: `grep -rn "framer-motion" app src`
+- [x] `npm run build`
 - Коммит: `refactor: import motion from motion/react`
 
 ## Задача 7. Язык страницы и приоритет главных картинок [простая]
 
-- [ ] В `app/layout.tsx`: `<html lang="en">` → `<html lang="ru">`. Сайт на русском, это влияет на SEO, переносы и озвучку скринридерами.
-- [ ] Добавь проп `priority` к первой видимой картинке на страницах:
+- [x] В `app/layout.tsx`: `<html lang="en">` → `<html lang="ru">`. Сайт на русском, это влияет на SEO, переносы и озвучку скринридерами.
+- [x] Добавь проп `priority` к первой видимой картинке на страницах:
   - `src/widgets/Hero.tsx`: `<Image src="/chess/king.webp" ...>` (около строки 91);
   - `app/about/page.tsx`: `<Image src="/teamates/team.webp" ...>`.
-- [ ] `npm run build`
+- [x] `npm run build`
 - Коммит: `perf: set page language and prioritize hero images`
 
 ## Задача 8. Убрать лишние `'use client'` [простая]
@@ -309,16 +309,16 @@ python3 -m venv /tmp/fontenv && /tmp/fontenv/bin/pip -q install fonttools brotli
 
 `Reviews` и `Partners` рендерят клиентские `Carousel` и `Tabs`: из серверного компонента так можно, пока в их пропсы не передаются функции.
 
-- [ ] Удали первую строку `'use client'` в каждом файле из списка.
-- [ ] `npm run build`. Если появится ошибка вида «Event handlers cannot be passed to Client Component props» или «useState only works in Client Components», верни `'use client'` в тот файл, на который указывает ошибка, и запиши его в «Журнал».
-- [ ] Сравни First Load JS в выводе сборки с прежним, он не должен вырасти.
+- [x] Удали первую строку `'use client'` в каждом файле из списка.
+- [x] `npm run build`. Если появится ошибка вида «Event handlers cannot be passed to Client Component props» или «useState only works in Client Components», верни `'use client'` в тот файл, на который указывает ошибка, и запиши его в «Журнал».
+- [x] Сравни First Load JS в выводе сборки с прежним, он не должен вырасти.
 - Коммит: `perf: render static widgets as server components`
 
 ## Задача 9. Рабочие контакты и карта [простая]
 
 На `/contact` и в футере 8 ссылок ведут на `href="#"`: клик ничего не делает. Контакты продублированы в двух файлах.
 
-- [ ] Создай `src/shared/constants/contacts.ts` и экспортируй его в `src/shared/constants/index.ts`:
+- [x] Создай `src/shared/constants/contacts.ts` и экспортируй его в `src/shared/constants/index.ts`:
 
 ```ts
 export const contacts = {
@@ -329,10 +329,10 @@ export const contacts = {
 }
 ```
 
-- [ ] В `app/contact/page.tsx` и `src/widgets/Footer.tsx` замени `href="#"` и захардкоженный текст на значения из `contacts`. Внешним ссылкам (все, кроме email) добавь `target="_blank" rel="noopener noreferrer"`. Классы и вёрстку не меняй.
-- [ ] В `<iframe>` Яндекс-карты на `/contact` добавь `loading="lazy"` и `title="Карта: офис Lidforce"`.
-- [ ] Проверь, что команда ничего не выводит: `grep -rn 'href="#"' app src`
-- [ ] `npm run build`
+- [x] В `app/contact/page.tsx` и `src/widgets/Footer.tsx` замени `href="#"` и захардкоженный текст на значения из `contacts`. Внешним ссылкам (все, кроме email) добавь `target="_blank" rel="noopener noreferrer"`. Классы и вёрстку не меняй.
+- [x] В `<iframe>` Яндекс-карты на `/contact` добавь `loading="lazy"` и `title="Карта: офис Lidforce"`.
+- [x] Проверь, что команда ничего не выводит: `grep -rn 'href="#"' app src`
+- [x] `npm run build`
 - Коммит: `fix: make contact links work and lazy-load the map`
 - ⚠️ В отчёте попроси владельца подтвердить, что аккаунты верные. Они взяты из текста на сайте.
 
@@ -340,18 +340,18 @@ export const contacts = {
 
 Форма в `src/widgets/Feedback.tsx` отправляет в Bitrix24 даже пустую заявку.
 
-- [ ] Добавь `required` к полям имени, телефона и email. Добавь `autoComplete`: `"name"`, `"tel"`, `"email"`. Типы полей (`text`, `tel`, `email`) уже правильные, браузер сам проверит формат email.
-- [ ] Ничего больше в форме не меняй, логику отправки не трогай.
-- [ ] `npm run build`
+- [x] Добавь `required` к полям имени, телефона и email. Добавь `autoComplete`: `"name"`, `"tel"`, `"email"`. Типы полей (`text`, `tel`, `email`) уже правильные, браузер сам проверит формат email.
+- [x] Ничего больше в форме не меняй, логику отправки не трогай.
+- [x] `npm run build`
 - Коммит: `fix: require contact fields in feedback form`
 
 ## Задача 11. Убрать скачок вёрстки в «Преимуществах» [средняя]
 
 `src/widgets/Adventages.tsx` решает, ставить ли `position: absolute`, через JS-хук `useScreenSize()`. До загрузки JS на десктопе показывается мобильная раскладка, потом блоки прыгают (CLS). Нужно перенести это в CSS.
 
-- [ ] Убери `const { md } = useScreenSize()` и импорт `useScreenSize`.
-- [ ] Классы элемента: вместо `md ? 'absolute' : 'static'` используй `md:absolute md:top-[var(--top)] md:left-[var(--left)]`.
-- [ ] `style`: передавай координаты как CSS-переменные:
+- [x] Убери `const { md } = useScreenSize()` и импорт `useScreenSize`.
+- [x] Классы элемента: вместо `md ? 'absolute' : 'static'` используй `md:absolute md:top-[var(--top)] md:left-[var(--left)]`.
+- [x] `style`: передавай координаты как CSS-переменные:
 
 ```tsx
 style={{
@@ -361,14 +361,14 @@ style={{
 } as React.CSSProperties}
 ```
 
-- [ ] `npm run build`. Визуально сравни главную на ширине 375 px и 1280 px с тем, что было до задачи: финальная раскладка должна совпадать.
+- [x] `npm run build`. Визуально сравни главную на ширине 375 px и 1280 px с тем, что было до задачи: финальная раскладка должна совпадать.
 - Коммит: `perf: position advantages with css instead of js media query`
 
 ## Задача 12. SEO: метаданные страниц [средняя]
 
 Сейчас у всех страниц title «Lidforce» и описание «Marketing agency». Страницы `/about` и `/service` целиком клиентские (`'use client'`) из-за `motion`, поэтому `export const metadata` в них не работает.
 
-- [ ] В `app/layout.tsx` задай метаданные по умолчанию:
+- [x] В `app/layout.tsx` задай метаданные по умолчанию:
 
 ```ts
 export const metadata: Metadata = {
@@ -377,10 +377,10 @@ export const metadata: Metadata = {
 }
 ```
 
-- [ ] `/about`: вынеси первый блок с `motion.div` (фото команды и заголовок) в новый клиентский компонент `src/widgets/AboutHero.tsx` и экспортируй его в `src/widgets/index.ts`. В `app/about/page.tsx` убери `'use client'` и добавь `export const metadata = { title: 'О нас' }`.
-- [ ] `/service`: так же вынеси все блоки с `motion` в клиентские компоненты в `src/widgets/`, сделай страницу серверной и добавь `export const metadata = { title: 'Услуги' }`.
-- [ ] Добавь `export const metadata` в `app/case/page.tsx` (`'Кейсы'`), `app/case/nextprotein/page.tsx` (`'Кейс NextProtein'`), `app/contact/page.tsx` (`'Контакты'`).
-- [ ] `npm run build`. Проверь заголовки: `grep -o '<title>[^<]*' out/*.html out/*/*.html out/*/*/*.html`
+- [x] `/about`: вынеси первый блок с `motion.div` (фото команды и заголовок) в новый клиентский компонент `src/widgets/AboutHero.tsx` и экспортируй его в `src/widgets/index.ts`. В `app/about/page.tsx` убери `'use client'` и добавь `export const metadata = { title: 'О нас' }`.
+- [x] `/service`: так же вынеси все блоки с `motion` в клиентские компоненты в `src/widgets/`, сделай страницу серверной и добавь `export const metadata = { title: 'Услуги' }`.
+- [x] Добавь `export const metadata` в `app/case/page.tsx` (`'Кейсы'`), `app/case/nextprotein/page.tsx` (`'Кейс NextProtein'`), `app/contact/page.tsx` (`'Контакты'`).
+- [x] `npm run build`. Проверь заголовки: `grep -o '<title>[^<]*' out/*.html out/*/*.html out/*/*/*.html`
 - Коммит: `feat: add per-page metadata`
 
 ## Задача 13. `robots.txt` и `sitemap.xml` [решение владельца]
@@ -396,18 +396,18 @@ export const metadata: Metadata = {
 
 Ожидаемая экономия: около 20–30 КБ (gzip) на страницах с анимациями.
 
-- [ ] Создай клиентский компонент `src/shared/ui/MotionProvider.tsx` с `<LazyMotion features={domAnimation} strict>` и оберни им `{children}` в `app/layout.tsx`.
-- [ ] Во всех файлах из задачи 6 и в `CircularText.tsx` замени `motion.div` / `motion.h1` / `motion.p` на `m.div` / `m.h1` / `m.p` (`import { m } from 'motion/react'`). `AnimatePresence`, `useAnimation`, `useMotionValue` остаются как есть.
-- [ ] `npm run build`. Режим `strict` упадёт в рантайме, если где-то остался `motion.*`, поэтому открой все страницы в `npm run dev` и проверь консоль браузера.
+- [x] Создай клиентский компонент `src/shared/ui/MotionProvider.tsx` с `<LazyMotion features={domAnimation} strict>` и оберни им `{children}` в `app/layout.tsx`.
+- [x] Во всех файлах из задачи 6 и в `CircularText.tsx` замени `motion.div` / `motion.h1` / `motion.p` на `m.div` / `m.h1` / `m.p` (`import { m } from 'motion/react'`). `AnimatePresence`, `useAnimation`, `useMotionValue` остаются как есть.
+- [x] `npm run build`. Режим `strict` упадёт в рантайме, если где-то остался `motion.*`, поэтому открой все страницы в `npm run dev` и проверь консоль браузера.
 - Коммит: `perf: load motion features lazily`
 
 ## Задача 15. Линтер без устаревшего `next lint` [простая]
 
 `next lint` устарел в Next 15.5 и удалён в 16.
 
-- [ ] В `package.json`: `"lint": "eslint ."`.
-- [ ] В `eslint.config.mjs` первым элементом массива добавь `{ ignores: ['.next/**', 'out/**', 'node_modules/**', 'next-env.d.ts'] }`.
-- [ ] `npm run lint` должен пройти. Исправь только то, что он найдёт в `app/` и `src/`.
+- [x] В `package.json`: `"lint": "eslint ."`.
+- [x] В `eslint.config.mjs` первым элементом массива добавь `{ ignores: ['.next/**', 'out/**', 'node_modules/**', 'next-env.d.ts'] }`.
+- [x] `npm run lint` должен пройти. Исправь только то, что он найдёт в `app/` и `src/`.
 - Коммит: `chore: run eslint directly instead of next lint`
 
 ## Задача 16. Убрать дублирование кейсов [средняя, по желанию]
@@ -420,7 +420,7 @@ export const metadata: Metadata = {
 
 ## Задача 17. README [простая]
 
-- [ ] Замени шаблонный README от create-next-app коротким описанием: что это за сайт, `npm run dev` (порт 3003), `npm run build` (статический экспорт в `out/`), деплой (push в `main` → Vercel), скрипты из `scripts/`.
+- [x] Замени шаблонный README от create-next-app коротким описанием: что это за сайт, `npm run dev` (порт 3003), `npm run build` (статический экспорт в `out/`), деплой (push в `main` → Vercel), скрипты из `scripts/`.
 - Коммит: `docs: describe project setup`
 
 ---
@@ -437,4 +437,12 @@ export const metadata: Metadata = {
 
 Исполнитель записывает сюда проблемы и отклонения от плана: номер задачи, что случилось, что сделано.
 
-- …
+- 30.10.2026: выполнены задачи 0–12, 14, 15, 17.
+- Задача 3: `scripts/optimize-images.mjs` случайно попал в коммит задачи 3, перенесён в коммит задачи 4.
+- Задача 10: для телефона поставлен `autoComplete="tel-national"` вместо `"tel"`, потому что префикс `+996` уже показан перед полем.
+- Задача 12: на `/service` в клиентский компонент `src/widgets/ServiceHeroImages.tsx` вынесен только блок с тремя анимированными картинками, остальная страница серверная.
+- Задача 13 не сделана: ждёт решения владельца (домен).
+- Задача 16 не сделана: необязательная, требует сверки вёрстки пиксель в пиксель.
+- Вне плана: на `/case` и `/case/nextprotein` внутри `<Link>` был вложен `<a>`. Это ломало гидрацию: React перерисовывал страницу на клиенте. Внутренний `<a>` заменён на `<span>`.
+- Найдено, не исправлено: в `app/case/nextprotein/page.tsx` (строки ~184–186) фон задан как `url(./6da60e37….svg)`. Относительный путь всегда давал 404, на проде тоже. Сам файл удалён в задаче 1 как неиспользуемый. Если фон нужен, верни файл командой `git checkout a37047f -- public/6da60e37aab2b73dac7cbca53b03665bf3217b4c.svg` и поменяй путь на `/6da60e37….svg`.
+- Осталось: 45 предупреждений Next о legacy-пропе `objectFit` у `<Image>`. Next сам переводит его в `style`, так что работает, но лучше заменить на класс `object-cover` / `object-contain`.
