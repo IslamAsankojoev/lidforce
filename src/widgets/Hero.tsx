@@ -91,6 +91,7 @@ export const Hero = () => {
             <Image
               src="/chess/king.webp"
               alt="Король"
+              priority
               width={400}
               height={400}
               className="w-96 lg:w-[500px]"
