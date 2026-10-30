@@ -9,7 +9,7 @@ const data = {
     'Прямые поставки, сертифицированная продукция и широкий ассортимент.',
     'Для тех, кто ценит качество, результат и здоровье.',
   ],
-  logo: '/fd0b7a7100e3242956b334204c8dc92633c48ced.png',
+  logo: '/fd0b7a7100e3242956b334204c8dc92633c48ced.webp',
   manager: {
     name: 'Эльдияр Азизбеков',
     role: 'Менеджер кейса',
@@ -23,9 +23,9 @@ const data = {
     niches: ['Спортивное питание NeхtProtein'],
   },
   projectImages: {
-    main: '/4750604c542ab686bd7bc3798676c3cc5b6112fe.png',
-    before: '/bbf53f2acb4d39328547d333835f5084c1356e38.png',
-    after: '/7c1c0fcc46a390026ad52ada5b04c6971a02cb3c.png',
+    main: '/4750604c542ab686bd7bc3798676c3cc5b6112fe.webp',
+    before: '/bbf53f2acb4d39328547d333835f5084c1356e38.webp',
+    after: '/7c1c0fcc46a390026ad52ada5b04c6971a02cb3c.webp',
     branding: [],
   },
   results: {

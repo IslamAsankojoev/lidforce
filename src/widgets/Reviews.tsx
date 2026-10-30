@@ -26,42 +26,42 @@ const reviewsData: Review[] = [
     name: 'Анна Романова',
     position: 'Маркетолог, интернет-магазин одеж...',
     text: 'Обратились в агентство за продвижением нового бренда — и остались в восторге! Команда погрузилась в наш продукт с головой, предложила крутые решения и буквально с первых недель мы увидели рост вовлечённости и продаж. Очень внимательный и профессиональный подход.',
-    avatar: '/reviews/1.png',
+    avatar: '/reviews/1.webp',
   },
   {
     id: 2,
     name: 'Игорь Ткаченко',
     position: 'Сооснователь IT-стартапа',
     text: 'Нам нужно было запустить продукт быстро и без ошибок — ребята из этой команды сделали невозможное. От позиционирования до настройки рекламы — всё чётко, прозрачно и по делу. Чувствуется, что работают с душой и знанием дела.',
-    avatar: '/reviews/2.png',
+    avatar: '/reviews/2.webp',
   },
   {
     id: 3,
     name: 'Дарья Абдуллаева',
     position: 'Владелица салона красоты «Lime»',
     text: 'Благодаря сотрудничеству с этой компанией мы полностью обновили визуал, настроили Instagram и таргет. Клиенты стали активнее записываться, а узнаваемость выросла. Очень понравилась лёгкость в общении и скорость работы.',
-    avatar: '/reviews/3.png',
+    avatar: '/reviews/3.webp',
   },
   {
     id: 4,
     name: 'Анна Романова',
     position: 'Маркетолог, интернет-магазин одеж...',
     text: 'Обратились в агентство за продвижением нового бренда — и остались в восторге! Команда погрузилась в наш продукт с головой, предложила крутые решения и буквально с первых недель мы увидели рост вовлечённости и продаж. Очень внимательный и профессиональный подход.',
-    avatar: '/reviews/1.png',
+    avatar: '/reviews/1.webp',
   },
   {
     id: 5,
     name: 'Игорь Ткаченко',
     position: 'Сооснователь IT-стартапа',
     text: 'Нам нужно было запустить продукт быстро и без ошибок — ребята из этой команды сделали невозможное. От позиционирования до настройки рекламы — всё чётко, прозрачно и по делу. Чувствуется, что работают с душой и знанием дела.',
-    avatar: '/reviews/2.png',
+    avatar: '/reviews/2.webp',
   },
   {
     id: 6,
     name: 'Дарья Абдуллаева',
     position: 'Владелица салона красоты «Lime»',
     text: 'Благодаря сотрудничеству с этой компанией мы полностью обновили визуал, настроили Instagram и таргет. Клиенты стали активнее записываться, а узнаваемость выросла. Очень понравилась лёгкость в общении и скорость работы.',
-    avatar: '/reviews/3.png',
+    avatar: '/reviews/3.webp',
   },
 ]
 
@@ -70,31 +70,31 @@ const videoReviewsData: Review[] = [
     id: 1,
     name: 'Арсен',
     company: 'EliteHouse',
-    avatar: '/reviews/preview1.png',
+    avatar: '/reviews/preview1.webp',
   },
   {
     id: 2,
     name: 'Нурислам',
     company: 'NeхtProtein',
-    avatar: '/reviews/preview2.png',
+    avatar: '/reviews/preview2.webp',
   },
   {
     id: 3,
     name: 'Тынара',
     company: 'SamFlowers',
-    avatar: '/reviews/preview3.png',
+    avatar: '/reviews/preview3.webp',
   },
   {
     id: 4,
     name: 'Адинай',
     company: 'EliteHouse',
-    avatar: '/reviews/preview4.png',
+    avatar: '/reviews/preview4.webp',
   },
   {
     id: 5,
     name: 'Ксения',
     company: 'ArtHouse',
-    avatar: '/reviews/preview5.png',
+    avatar: '/reviews/preview5.webp',
   },
 ]
 
@@ -129,7 +129,7 @@ export const Reviews = () => {
                 </Typography>
               </TabsTrigger>
               <Image
-                src="/reviews/Heart.png"
+                src="/reviews/Heart.webp"
                 alt="heart-right"
                 width={122}
                 height={100}
@@ -236,7 +236,7 @@ export const Reviews = () => {
                                 className="object-cover rounded-4xl overflow-hidden"
                               />
                               <Image
-                                src="/reviews/play.png"
+                                src="/reviews/play.webp"
                                 alt="play"
                                 width={67}
                                 height={47}

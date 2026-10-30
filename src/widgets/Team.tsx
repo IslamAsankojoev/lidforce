@@ -13,7 +13,7 @@ export const Team = () => {
             <div className="flex flex-col lg:flex-row justify-between mb-5 gap-10 h-full items-center">
               <div className="relative w-full max-w-[400px] md:h-[600px] h-[400px]">
                 <Image
-                  src="/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.png"
+                  src="/teamates/2be8d6e82863dea2538b4fd25df9f063ea36b124.webp"
                   alt="team"
                   fill
                   objectFit="cover"
@@ -55,12 +55,12 @@ export const Team = () => {
               Одна команда для решения
             </Typography>
             <div className="flex items-center gap-2 justify-center">
-              <Image src="/lightning.png" alt="arrow right" width={60} height={60} />
+              <Image src="/lightning.webp" alt="arrow right" width={60} height={60} />
               <Typography variant="headingXL" className="text-bg-surface">
                 всех задач
               </Typography>
               <Image
-                src="/lightning.png"
+                src="/lightning.webp"
                 alt="arrow right"
                 width={60}
                 height={60}

@@ -8,82 +8,82 @@ const cases = [
   {
     id: 1,
     title: 'Elit House',
-    image: '/cases/elit-house.png',
+    image: '/cases/elit-house.webp',
   },
   {
     id: 2,
     title: 'Elit Invest',
-    image: '/cases/elit-invest.png',
+    image: '/cases/elit-invest.webp',
   },
   {
     id: 3,
     title: 'Ayat',
-    image: '/cases/ayat.png',
+    image: '/cases/ayat.webp',
   },
   {
     id: 4,
     title: 'Legenda Lux',
-    image: '/cases/legenda-lux.png',
+    image: '/cases/legenda-lux.webp',
   },
   {
     id: 5,
     title: 'Mobi Market',
-    image: '/cases/mobi-market.png',
+    image: '/cases/mobi-market.webp',
   },
   {
     id: 6,
     title: 'Rooz Beauty',
-    image: '/cases/rooz-beauty.png',
+    image: '/cases/rooz-beauty.webp',
   },
   {
     id: 7,
     title: 'Liana Flowers',
-    image: '/cases/liana-flowers.png',
+    image: '/cases/liana-flowers.webp',
   },
   {
     id: 8,
     title: 'Encar',
-    image: '/cases/encar.png',
+    image: '/cases/encar.webp',
   },
   {
     id: 9,
     title: 'Marsel',
-    image: '/cases/marsel.png',
+    image: '/cases/marsel.webp',
   },
   {
     id: 10,
     title: 'Liana Flowers',
-    image: '/cases/liana-flowers.png',
+    image: '/cases/liana-flowers.webp',
   },
   {
     id: 11,
     title: 'Doscar trade',
-    image: '/cases/doscar-trade.png',
+    image: '/cases/doscar-trade.webp',
   },
   {
     id: 12,
     title: 'Next Protein',
-    image: '/cases/next-protein.png',
+    image: '/cases/next-protein.webp',
   },
   {
     id: 13,
     title: 'Obraz KG',
-    image: '/cases/obraz-kg.png',
+    image: '/cases/obraz-kg.webp',
   },
   {
     id: 14,
     title: 'Ожак кебаб',
-    image: '/cases/ojak-kebab.png',
+    image: '/cases/ojak-kebab.webp',
   },
   {
     id: 15,
     title: 'Sapar umra',
-    image: '/cases/sapar-umra.png',
+    image: '/cases/sapar-umra.webp',
   },
   {
     id: 16,
     title: 'Sapat Auto',
-    image: '/cases/sapat-auto.png',
+    image: '/cases/sapat-auto.webp',
   },
 ]
 

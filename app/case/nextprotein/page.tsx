@@ -13,7 +13,7 @@ export default async function Page() {
       'Прямые поставки, сертифицированная продукция и широкий ассортимент.',
       'Для тех, кто ценит качество, результат и здоровье.',
     ],
-    logo: '/fd0b7a7100e3242956b334204c8dc92633c48ced.png',
+    logo: '/fd0b7a7100e3242956b334204c8dc92633c48ced.webp',
     manager: {
       name: 'Эльдияр Азизбеков',
       role: 'Менеджер кейса',
@@ -27,9 +27,9 @@ export default async function Page() {
       niches: ['Спортивное питание NeхtProtein'],
     },
     projectImages: {
-      main: '/4750604c542ab686bd7bc3798676c3cc5b6112fe.png',
-      before: '/bbf53f2acb4d39328547d333835f5084c1356e38.png',
-      after: '/7c1c0fcc46a390026ad52ada5b04c6971a02cb3c.png',
+      main: '/4750604c542ab686bd7bc3798676c3cc5b6112fe.webp',
+      before: '/bbf53f2acb4d39328547d333835f5084c1356e38.webp',
+      after: '/7c1c0fcc46a390026ad52ada5b04c6971a02cb3c.webp',
       branding: [],
     },
     results: {
@@ -566,7 +566,7 @@ export default async function Page() {
                 <div className="relative bg-white-pure flex items-center justify-center h-[250px] md:h-[300px] rounded-[47px] w-full overflow-hidden">
                   <Image
                     alt="График просмотров"
-                    src="/fcb5a9d74f1b63abd05c9c6de7a86b7d464ed4c2.png"
+                    src="/fcb5a9d74f1b63abd05c9c6de7a86b7d464ed4c2.webp"
                     fill
                     className="object-cover"
                   />
@@ -588,7 +588,7 @@ export default async function Page() {
                     <div className="relative bg-white-pure flex items-center justify-center h-[250px] md:h-[304px] rounded-[30px] w-full flex-1 overflow-hidden">
                       <Image
                         alt="График заявок"
-                        src="/390bc69c77c21590521064de86cbd6e6bf098d1b.png"
+                        src="/390bc69c77c21590521064de86cbd6e6bf098d1b.webp"
                         fill
                         objectFit="contain"
                         className="object-cover"
@@ -597,7 +597,7 @@ export default async function Page() {
                     <div className="relative bg-white-pure flex items-center justify-center h-[250px] md:h-[304px] rounded-[16px] md:w-[139px] w-32 overflow-hidden">
                       <Image
                         alt="Мобильный скриншот"
-                        src="/c29fa5aa6caa27099fb27b5c4e14cc4060145809.png"
+                        src="/c29fa5aa6caa27099fb27b5c4e14cc4060145809.webp"
                         fill
                         objectFit="contain"
                         className="object-cover"
@@ -619,7 +619,7 @@ export default async function Page() {
                   <div className="relative bg-white-pure flex items-center justify-center h-[220px] md:h-[290px] rounded-[23px] md:w-[295px] w-64 overflow-hidden">
                     <Image
                       alt="Брендбук"
-                      src="/b9c9c3067cb1e24a192b9576249a0831dd1fe741.png"
+                      src="/b9c9c3067cb1e24a192b9576249a0831dd1fe741.webp"
                       fill
                       objectFit="contain"
                       className="object-cover"
@@ -642,7 +642,7 @@ export default async function Page() {
                   <div className="relative bg-white-pure flex items-center justify-center h-[200px] md:h-[248px] rounded-[30px] w-full md:flex-1 overflow-hidden">
                     <Image
                       alt="Скриншот рекламного кабинета 1"
-                      src="/65d59ff2dc4b5c5b0806cbbdcfccd56f0e281ec5.png"
+                      src="/65d59ff2dc4b5c5b0806cbbdcfccd56f0e281ec5.webp"
                       fill
                       objectFit="contain"
                       className="object-cover"
@@ -651,7 +651,7 @@ export default async function Page() {
                   <div className="relative bg-white-pure flex items-center justify-center h-[200px] md:h-[249px] rounded-[30px] w-full md:flex-1 overflow-hidden">
                     <Image
                       alt="Скриншот рекламного кабинета 2"
-                      src="/eb98d4a406005fa20465371d5a0957d09eaea626.png"
+                      src="/eb98d4a406005fa20465371d5a0957d09eaea626.webp"
                       fill
                       objectFit="contain"
                       className="object-cover"
