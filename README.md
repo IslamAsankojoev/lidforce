@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lidforce
 
-## Getting Started
+Сайт маркетингового агентства LidForce. Next.js 15 (App Router), React 19, Tailwind 4, `motion`, shadcn/ui.
 
-First, run the development server:
+## Разработка
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm ci
+npm run dev    # http://localhost:3003
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Сборка и деплой
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build  # статический экспорт в out/
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Сайт полностью статический (`output: 'export'` в `next.config.ts`). Push в `main` автоматически выкатывает прод на Vercel.
 
-## Learn More
+Оптимизации картинок от Next нет (`images.unoptimized`), поэтому новые картинки нужно класть в `public/` уже сжатыми: WebP, ширина не больше 1920 px.
 
-To learn more about Next.js, take a look at the following resources:
+## Структура
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `app/`: страницы (`/`, `/about`, `/service`, `/case`, `/case/nextprotein`, `/contact`).
+- `src/widgets/`: секции страниц.
+- `src/shared/`: `Typography`, шрифты, цвета, роуты, контакты, иконки, хуки.
+- `src/shadcn/`: компоненты shadcn/ui.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Скрипты
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `node scripts/optimize-images.mjs [--write]`: переводит PNG/JPG из `public/` в WebP и обновляет ссылки в коде. Без флага только показывает, что будет сделано.
+- `node scripts/find-unused-assets.mjs`: показывает файлы в `public/`, на которые нет ссылок.
+- `node scripts/measure-pages.mjs`: вес картинок на каждой странице. Запускать после `npm run build`.
