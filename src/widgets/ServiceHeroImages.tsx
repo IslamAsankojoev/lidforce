@@ -1,12 +1,12 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 export const ServiceHeroImages = () => {
   return (
     <div className="absolute right-0 bottom-0 w-full lg:w-1/2 flex items-end justify-end">
-      <motion.div
+      <m.div
         initial={{ y: 400 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
@@ -19,8 +19,8 @@ export const ServiceHeroImages = () => {
           width={262}
           height={462}
         />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         initial={{ y: 700 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0 }}
@@ -33,8 +33,8 @@ export const ServiceHeroImages = () => {
           width={262}
           height={574}
         />
-      </motion.div>
-      <motion.div
+      </m.div>
+      <m.div
         initial={{ y: 400 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.5, delay: 1 }}
@@ -47,7 +47,7 @@ export const ServiceHeroImages = () => {
           width={262}
           height={462}
         />
-      </motion.div>
+      </m.div>
     </div>
   )
 }

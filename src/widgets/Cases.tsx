@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { Typography } from '../shared'
 import { useState } from 'react'
 
@@ -158,7 +158,7 @@ export const Cases = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -167,11 +167,11 @@ export const Cases = () => {
             <Typography variant="headingXL" className="text-white-pure mb-6">
               Кейсы
             </Typography>
-          </motion.div>
+          </m.div>
         </div>
 
         {/* Category Filter */}
-        <motion.div
+        <m.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -193,7 +193,7 @@ export const Cases = () => {
               </Typography>
             </button>
           ))}
-        </motion.div>
+        </m.div>
 
         {/* Cases */}
         <div className="relative">

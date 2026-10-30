@@ -1,6 +1,6 @@
 'use client'
 
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { Typography } from '../shared'
 import clsx from 'clsx'
 
@@ -66,7 +66,7 @@ export const Adventages = () => {
           "relative md:h-[240px] flex flex-col gap-4",
         )}>
           {advantagesData.map((advantage, index) => (
-            <motion.div
+            <m.div
               key={advantage.id}
               initial={{
                 opacity: 0,
@@ -104,7 +104,7 @@ export const Adventages = () => {
                   </span>
                 ))}
               </Typography>
-            </motion.div>
+            </m.div>
           ))}
         </div>
       </div>

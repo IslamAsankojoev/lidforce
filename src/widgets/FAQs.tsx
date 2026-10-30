@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { Plus } from '../shared/icons'
 import { Typography } from '../shared'
 import clsx from 'clsx'
-import { AnimatePresence, motion } from 'motion/react'
+import { AnimatePresence, m } from 'motion/react'
 
 interface FAQItem {
   id: number
@@ -77,7 +77,7 @@ export const FAQs = () => {
                   className="w-full p-4 pl-6 bg-white-pure rounded-4xl cursor-pointer"
                   onClick={() => toggleItem(faq.id)}
                 >
-                  <motion.div
+                  <m.div
                     initial={{
                       opacity: 0,
                     }}
@@ -105,10 +105,10 @@ export const FAQs = () => {
                     </div>
 
                     {/* Ответ */}
-                    <motion.div className={clsx('transition-all overflow-hidden')}>
+                    <m.div className={clsx('transition-all overflow-hidden')}>
                       <AnimatePresence>
                         {isOpen && (
-                          <motion.div
+                          <m.div
                             initial={{
                               opacity: 0,
                               height: 0,
@@ -128,11 +128,11 @@ export const FAQs = () => {
                             <Typography variant="bodyL" className="text-balance">
                               {faq.answer}
                             </Typography>
-                          </motion.div>
+                          </m.div>
                         )}
                       </AnimatePresence>
-                    </motion.div>
-                  </motion.div>
+                    </m.div>
+                  </m.div>
                 </div>
               )
             })}

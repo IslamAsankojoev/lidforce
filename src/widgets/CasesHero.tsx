@@ -2,7 +2,7 @@
 
 import { Typography } from '@/src/shared/ui/Typography'
 import Image from 'next/image'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 
 const cases = [
   {
@@ -93,7 +93,7 @@ export const CasesHero = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-16">
-          <motion.div
+          <m.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -102,7 +102,7 @@ export const CasesHero = () => {
             <Typography variant="headingXL" className="text-white-pure">
               Кейсы
             </Typography>
-          </motion.div>
+          </m.div>
         </div>
 
         <div className="relative">

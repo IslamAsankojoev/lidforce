@@ -1,6 +1,6 @@
 'use client'
 import Image from 'next/image'
-import { motion } from 'motion/react'
+import { m } from 'motion/react'
 import { useRef } from 'react'
 import { Typography, useScreenSize } from '../shared'
 
@@ -62,7 +62,7 @@ export const Hero = () => {
   return (
     <section className="relative isolate min-h-screen border-b border-dark-deep overflow-hidden flex flex-col justify-center">
       <div className="mx-auto max-w-7xl px-4 lg:px-8 py-20 lg:py-28">
-        <motion.h1
+        <m.h1
           initial={{ opacity: 0, scale: 0.96, y: 400 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
@@ -75,11 +75,11 @@ export const Hero = () => {
           >
             МАРКЕТИНГ
           </Typography>
-        </motion.h1>
+        </m.h1>
 
         {/* Pieces */}
 
-        <motion.div
+        <m.div
           ref={ref}
           variants={container}
           initial="hidden"
@@ -103,7 +103,7 @@ export const Hero = () => {
             {pieces
               .sort((a, b) => a.order - b.order)
               .map((p, i) => (
-                <motion.div
+                <m.div
                   key={p.alt}
                   variants={item(i)}
                   transition={{
@@ -117,25 +117,25 @@ export const Hero = () => {
                   }}
                 >
                   <Image src={p.src} alt={p.alt} width={400} height={400} className={p.className} />
-                </motion.div>
+                </m.div>
               ))}
           </div>
-        </motion.div>
+        </m.div>
 
         {/* Pill */}
-        <motion.div className="mx-auto w-fit rounded-full bg-grey-soft/15 px-6 py-3 backdrop-blur-sm text-white/90 text-sm md:text-base font-semibold z-50 -mt-16 relative">
+        <m.div className="mx-auto w-fit rounded-full bg-grey-soft/15 px-6 py-3 backdrop-blur-sm text-white/90 text-sm md:text-base font-semibold z-50 -mt-16 relative">
           <Typography variant="headingS" className="text-white/90 text-center">
             КОТОРЫЙ РЕАЛЬНО РАБОТАЕТ
           </Typography>
-        </motion.div>
+        </m.div>
 
         {/* Sub & CTA */}
-        <motion.p className="mx-auto mt-6 max-w-2xl text-center text-neutral-300">
+        <m.p className="mx-auto mt-6 max-w-2xl text-center text-neutral-300">
           Делаем эффективную интернет-рекламу и увеличиваем прибыль компаний <br />с помощью
           разработки и реализации комплексных стратегий
-        </motion.p>
+        </m.p>
 
-        <motion.div className="mt-8 flex justify-center">
+        <m.div className="mt-8 flex justify-center">
           <button
             aria-label="Получить консультацию"
             className="rounded-full bg-cyan-500 px-8 py-4 text-white font-medium shadow-lg
@@ -144,7 +144,7 @@ export const Hero = () => {
           >
             Получить консультацию
           </button>
-        </motion.div>
+        </m.div>
       </div>
     </section>
   )
