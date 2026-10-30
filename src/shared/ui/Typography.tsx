@@ -12,8 +12,8 @@ interface TypographyProps extends HTMLProps<HTMLParagraphElement> {
 }
 
 const montserrat = Montserrat({
-  subsets: ['latin', 'cyrillic', 'cyrillic-ext', 'latin-ext', 'vietnamese'],
-  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+  subsets: ['latin', 'cyrillic'],
+  display: 'swap',
 })
 
 const variantStyles: Record<string, string> = {
