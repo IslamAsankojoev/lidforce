@@ -167,14 +167,9 @@ export default async function Page() {
                             height={24}
                             className='grayscale-100'
                           />
-                          <a
-                            className="block text-white-pure text-[15px] text-center whitespace-nowrap cursor-pointer"
-                            href={data.links.instagram}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                          >
+                          <span className="block text-white-pure text-[15px] text-center whitespace-nowrap cursor-pointer">
                             {data.links.instagram}
-                          </a>
+                          </span>
                         </Link>
                       )}
                     </div>

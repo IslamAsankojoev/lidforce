@@ -150,14 +150,9 @@ export const Nextprotein = () => {
                       width={24}
                       height={24}
                     />
-                    <a
-                      className="block text-accent-primary text-[15px] text-center whitespace-nowrap cursor-pointer"
-                      href={data.links.instagram}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
+                    <span className="block text-accent-primary text-[15px] text-center whitespace-nowrap cursor-pointer">
                       {data.links.instagram}
-                    </a>
+                    </span>
                   </Link>
                 )}
               </div>
