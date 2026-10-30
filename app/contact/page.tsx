@@ -1,6 +1,9 @@
 import { colors, contacts, Instagram, Mail, Telegram, Typography, WhatsApp } from '@/src/shared'
 import { Feedback } from '@/src/widgets'
 import { MapPin } from 'lucide-react'
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = { title: 'Контакты' }
 
 export default function Contact() {
   return (

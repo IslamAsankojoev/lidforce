@@ -12,3 +12,5 @@ export * from "./Cases";
 export * from "./CasesHero";
 export * from "./NineSteps";
 export * from "./case-comps";
+export * from "./AboutHero";
+export * from "./ServiceHeroImages";

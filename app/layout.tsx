@@ -9,8 +9,8 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "Lidforce",
-  description: "Marketing agency",
+  title: { default: "Lidforce — маркетинговое агентство", template: "%s — Lidforce" },
+  description: "Маркетинговое агентство LidForce: таргет, SMM, продакшн, брендинг и сайты для бизнеса.",
 };
 
 export default function RootLayout({

@@ -1,31 +1,13 @@
-'use client'
-
-import Image from 'next/image'
-import { motion } from 'motion/react'
+import type { Metadata } from 'next'
 import { colors, Logo, Typography } from '@/src/shared'
-import { FAQs, Feedback, NineSteps, Team } from '@/src/widgets'
+import { AboutHero, FAQs, Feedback, NineSteps, Team } from '@/src/widgets'
+
+export const metadata: Metadata = { title: 'О нас' }
 
 export default function About() {
   return (
     <>
-      <div className="mb-10 rounded-[60px] relative w-full h-screen">
-        <Image src="/teamates/team.webp" alt="About" fill objectFit="cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/80" />
-        <motion.div
-          initial={{ opacity: 0, y: 100 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="absolute inset-0 container flex flex-col justify-end pb-20"
-        >
-          <Typography variant="headingXL" className="text-white-pure leading-none mb-6">
-            Одна команда <br /> для решения всех задач
-          </Typography>
-          <Typography variant="bodyL" className="text-white-pure">
-            Наша миссия - мы стремимся быть надежной опорой для бизнеса нового поколения на пути к
-            успеху
-          </Typography>
-        </motion.div>
-      </div>
+      <AboutHero />
       <div className="container pb-10">
         <div className="flex flex-col md:flex-row gap-10 py-10 md:p-10 items-center">
           <div className="flex flex-col items-center">

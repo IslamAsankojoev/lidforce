@@ -1,9 +1,8 @@
-'use client'
+import type { Metadata } from 'next'
 import clsx from 'clsx'
 import { colors, Typography } from '@/src/shared'
-import { FAQs, Feedback, NineSteps } from '@/src/widgets'
+import { FAQs, Feedback, NineSteps, ServiceHeroImages } from '@/src/widgets'
 import Image from 'next/image'
-import { motion } from 'motion/react'
 interface ServiceItem {
   id: number
   title?: string
@@ -121,6 +120,8 @@ const approachesData = [
   },
 ]
 
+export const metadata: Metadata = { title: 'Услуги' }
+
 export default function Service() {
   return (
     <>
@@ -173,51 +174,7 @@ export default function Service() {
               </button>
             </div>
 
-            {/* Анимированные блоки */}
-            <div className="absolute right-0 bottom-0 w-full lg:w-1/2 flex items-end justify-end">
-              <motion.div
-                initial={{ y: 400 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0.5 }}
-                className="-mr-14 z-1"
-              >
-                <Image
-                  src="/services/left-line.webp"
-                  alt="hero"
-                  className="object-contain"
-                  width={262}
-                  height={462}
-                />
-              </motion.div>
-              <motion.div
-                initial={{ y: 700 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
-                className="z-0"
-              >
-                <Image
-                  src="/services/middle-line.webp"
-                  alt="hero"
-                  className="object-contain"
-                  width={262}
-                  height={574}
-                />
-              </motion.div>
-              <motion.div
-                initial={{ y: 400 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 1 }}
-                className="-ml-28 z-1"
-              >
-                <Image
-                  src="/services/right-line.webp"
-                  alt="hero"
-                  className="object-contain"
-                  width={262}
-                  height={462}
-                />
-              </motion.div>
-            </div>
+            <ServiceHeroImages />
           </div>
         </div>
       </div>
