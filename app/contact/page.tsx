@@ -1,4 +1,4 @@
-import { colors, Instagram, Mail, Telegram, Typography, WhatsApp } from '@/src/shared'
+import { colors, contacts, Instagram, Mail, Telegram, Typography, WhatsApp } from '@/src/shared'
 import { Feedback } from '@/src/widgets'
 import { MapPin } from 'lucide-react'
 
@@ -9,28 +9,34 @@ export default function Contact() {
         <div className="container flex justify-center">
           <div className="flex flex-col md:flex-row justify-center gap-6 md:rounded-full md:bg-bg-surface p-4">
             <a
-              href="#"
+              href={contacts.whatsapp.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-6 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <WhatsApp className="size-7" color={colors['dark-deep']} />| +996 509 170 201
+              <WhatsApp className="size-7" color={colors['dark-deep']} />| {contacts.whatsapp.label}
             </a>
             <a
-              href="#"
+              href={contacts.telegram.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-4 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <Telegram className="size-5" color={colors['dark-deep']} />| Azizbekov_E
+              <Telegram className="size-5" color={colors['dark-deep']} />| {contacts.telegram.label}
             </a>
             <a
-              href="#"
+              href={contacts.instagram.href}
+              target="_blank"
+              rel="noopener noreferrer"
               className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-4 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <Instagram className="size-5" color={colors['dark-deep']} />| lid.force
+              <Instagram className="size-5" color={colors['dark-deep']} />| {contacts.instagram.label}
             </a>
             <a
-              href="#"
+              href={contacts.email.href}
               className="rounded-full bg-white-pure p-2 flex items-center gap-2 px-4 text-dark-deep hover:bg-white-pure/80 transition-colors duration-200 cursor-pointer font-medium"
             >
-              <Mail className="size-5" color={colors['dark-deep']} />| aeldiar34@gmail.com
+              <Mail className="size-5" color={colors['dark-deep']} />| {contacts.email.label}
             </a>
           </div>
         </div>
@@ -62,6 +68,8 @@ export default function Contact() {
               height="600px"
               frameBorder="1"
               allowFullScreen={true}
+              loading="lazy"
+              title="Карта: офис Lidforce"
               style={{ position: 'relative' }}
             ></iframe>
           </div>

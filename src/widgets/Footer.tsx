@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { colors, Instagram, Logo, routes, Telegram, Typography, WhatsApp } from '../shared'
+import { colors, contacts, Instagram, Logo, routes, Telegram, Typography, WhatsApp } from '../shared'
 import { Mail } from 'lucide-react'
 
 export const Footer = () => {
@@ -27,28 +27,34 @@ export const Footer = () => {
               </div>
               <div className="flex justify-center gap-6 flex-wrap md:flex-nowrap items-center">
                 <a
-                  href="#"
+                  href={contacts.whatsapp.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-accent-primary p-2 flex items-center gap-2 px-6 text-white-pure hover:bg-accent-primary/80 transition-colors duration-200 cursor-pointer font-medium"
                 >
-                  <WhatsApp className="size-7" />| +996 509 170 201
+                  <WhatsApp className="size-7" />| {contacts.whatsapp.label}
                 </a>
                 <a
-                  href="#"
+                  href={contacts.telegram.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-accent-primary p-2 flex items-center gap-2 px-4 text-white-pure hover:bg-accent-primary/80 transition-colors duration-200 cursor-pointer font-medium"
                 >
-                  <Telegram className="size-5" />| Azizbekov_E
+                  <Telegram className="size-5" />| {contacts.telegram.label}
                 </a>
                 <a
-                  href="#"
+                  href={contacts.instagram.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="rounded-full bg-accent-primary p-2 flex items-center gap-2 px-4 text-white-pure hover:bg-accent-primary/80 transition-colors duration-200 cursor-pointer font-medium"
                 >
-                  <Instagram className="size-5" />| lid.force
+                  <Instagram className="size-5" />| {contacts.instagram.label}
                 </a>
                 <a
-                  href="#"
+                  href={contacts.email.href}
                   className="rounded-full bg-accent-primary p-2 flex items-center gap-2 px-4 text-white-pure hover:bg-accent-primary/80 transition-colors duration-200 cursor-pointer font-medium"
                 >
-                  <Mail className="size-5" />| aeldiar34@gmail.com
+                  <Mail className="size-5" />| {contacts.email.label}
                 </a>
               </div>
             </div>
