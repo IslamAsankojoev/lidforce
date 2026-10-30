@@ -1,7 +1,7 @@
 'use client'
 
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 import { colors, Logo, Typography } from '@/src/shared'
 import { FAQs, Feedback, NineSteps, Team } from '@/src/widgets'
 

@@ -3,7 +3,7 @@ import clsx from 'clsx'
 import { colors, Typography } from '@/src/shared'
 import { FAQs, Feedback, NineSteps } from '@/src/widgets'
 import Image from 'next/image'
-import { motion } from 'framer-motion'
+import { motion } from 'motion/react'
 interface ServiceItem {
   id: number
   title?: string
