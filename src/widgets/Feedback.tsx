@@ -121,6 +121,8 @@ export const Feedback = ({ title }: FeedbackProps) => {
                       type="text"
                       placeholder="Ф.И.О"
                       className="w-full bg-transparent text-[#fdfeff] placeholder-[#d0d4df] text-base outline-none"
+                      required
+                      autoComplete="name"
                       {...register('fullName')}
                     />
                   </div>
@@ -134,6 +136,8 @@ export const Feedback = ({ title }: FeedbackProps) => {
                       type="tel"
                       placeholder="Номер телефона"
                       className="flex-1 bg-transparent text-[#fdfeff] placeholder-[#d0d4df] text-base outline-none"
+                      required
+                      autoComplete="tel-national"
                       {...register('phone')}
                     />
                   </div>
@@ -146,6 +150,8 @@ export const Feedback = ({ title }: FeedbackProps) => {
                       type="email"
                       placeholder="Email"
                       className="w-full bg-transparent text-[#fdfeff] placeholder-[#d0d4df] text-base outline-none"
+                      required
+                      autoComplete="email"
                       {...register('email')}
                     />
                   </div>
