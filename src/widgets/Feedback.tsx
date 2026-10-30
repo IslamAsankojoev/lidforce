@@ -1,16 +1,15 @@
 'use client'
 
 import { useForm } from 'react-hook-form'
-import { z } from 'zod'
 import { Typography } from '../shared'
 import clsx from 'clsx'
 
-const schema = z.object({
-  fullName: z.string().min(1),
-  phone: z.string().min(1),
-  email: z.string().email(),
-  goal: z.array(z.string()),
-})
+interface FormValues {
+  fullName: string
+  phone: string
+  email: string
+  goal: string[]
+}
 
 const services = [
   { id: 1, name: 'СЕО', active: true },
@@ -28,7 +27,7 @@ interface FeedbackProps {
 }
 
 export const Feedback = ({ title }: FeedbackProps) => {
-  const { register, handleSubmit, setValue, trigger, watch, reset } = useForm<z.infer<typeof schema>>({
+  const { register, handleSubmit, setValue, trigger, watch, reset } = useForm<FormValues>({
     defaultValues: {
       fullName: '',
       phone: '',
